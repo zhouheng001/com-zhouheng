@@ -9,7 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+
     <artifactId>com-springaop</artifactId>
 
+    <!--<dependencies>-->
+        <!--<dependency>-->
+            <!--<groupId>com.tujia</groupId>-->
+            <!--<artifactId>com-gof</artifactId>-->
+            <!--<version>${project.version}</version>-->
+        <!--</dependency>-->
+    <!--</dependencies>-->
 
 </project>
