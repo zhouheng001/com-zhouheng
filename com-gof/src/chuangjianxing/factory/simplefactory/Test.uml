@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>factory.simplefactory.Test</OriginalElement>
+  <nodes>
+    <node x="217.0" y="73.0">factory.simplefactory.AuDi</node>
+    <node x="69.73958333333334" y="160.0">factory.simplefactory.CarFactory</node>
+    <node x="127.25" y="240.0">factory.simplefactory.Test</node>
+    <node x="121.27083333333333" y="0.0">factory.simplefactory.Car</node>
+    <node x="0.0" y="80.0">factory.simplefactory.Biyd</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="factory.simplefactory.AuDi" target="factory.simplefactory.Car">
+      <point x="0.0" y="-15.0" />
+      <point x="130.5" y="60.0" />
+      <point x="146.77083333333331" y="60.0" />
+      <point x="-8.5" y="15.0" />
+    </edge>
+    <edge source="factory.simplefactory.Biyd" target="factory.simplefactory.Car">
+      <point x="0.0" y="-15.0" />
+      <point x="36.5" y="50.0" />
+      <point x="129.77083333333331" y="50.0" />
+      <point x="-25.5" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="36.0" y="157.5" />
+  <SelectedNodes>
+    <node>factory.simplefactory.AuDi</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>packageLocal</VISIBILITY>
+</Diagram>
+
