@@ -1,7 +1,7 @@
 package com.tujia.comdubboconsumer.controller;
 
 import com.tujia.comdubboapi.domain.City;
-import com.tujia.comdubboconsumer.presentation.DubboPresentation;
+import com.tujia.comdubboconsumer.controller.presentation.DubboPresentation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

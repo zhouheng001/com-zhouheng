@@ -1,4 +1,4 @@
-package com.tujia.comdubboconsumer.presentation;
+package com.tujia.comdubboconsumer.controller.presentation;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.tujia.comdubboapi.domain.City;
