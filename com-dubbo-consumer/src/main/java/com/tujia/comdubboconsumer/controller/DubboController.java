@@ -1,0 +1,27 @@
+package com.tujia.comdubboconsumer.controller;
+
+import com.tujia.comdubboapi.domain.City;
+import com.tujia.comdubboconsumer.presentation.DubboPresentation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * 描述:
+ *
+ * @author zhouheng
+ * @create 2018-12-28 上午 1:28
+ */
+@RestController
+@RequestMapping("/test/dubbo")
+public class DubboController {
+
+    @Autowired
+    private DubboPresentation dubboPresentation;
+
+    @RequestMapping("/t1")
+    public City getCity(){
+        return dubboPresentation.getCity();
+    }
+
+}
