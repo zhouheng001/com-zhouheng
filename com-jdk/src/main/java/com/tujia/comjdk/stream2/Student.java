@@ -18,7 +18,7 @@ public class Student {
     
     @Override
     public String toString() {
-        return "Student{" + "age=" + age + ", sex='" + sex + '\'' + '}';
+        return "Car{" + "age=" + age + ", sex='" + sex + '\'' + '}';
     }
     
     public Student() {

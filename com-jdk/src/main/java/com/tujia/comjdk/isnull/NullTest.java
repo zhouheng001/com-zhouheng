@@ -1,5 +1,7 @@
 package com.tujia.comjdk.isnull;
 
+import java.text.SimpleDateFormat;
+
 /**
  * 描述:
  *
@@ -8,8 +10,18 @@ package com.tujia.comjdk.isnull;
  */
 public class NullTest implements ITest {
 
+    public static void main(String[] args) {
+        long l = System.currentTimeMillis();
+        System.out.println(l);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String format = simpleDateFormat.format(l);
+        System.out.println(format);
+    }
+
     public void main1(String[] args) {
-         if(args==null) return;
+        long l = System.currentTimeMillis();
+        System.out.println(l);
+
     }
 
     public void main2(String[] args) {
