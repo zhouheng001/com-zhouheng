@@ -10,14 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <artifactId>com-springaop</artifactId>
+    <artifactId>com-mianshi</artifactId>
 
-    <!--<dependencies>-->
-        <!--<dependency>-->
-            <!--<groupId>com.tujia</groupId>-->
-            <!--<artifactId>com-gof</artifactId>-->
-            <!--<version>${project.version}</version>-->
-        <!--</dependency>-->
-    <!--</dependencies>-->
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

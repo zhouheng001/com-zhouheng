@@ -20,7 +20,7 @@
 		<module>com-jdk</module>
 		<module>com-aopandannotation</module>
 		<module>com-gof</module>
-		<module>com-springaop</module>
+		<module>com-mianshi</module>
 		<module>com-dubbo-provider</module>
 		<module>com-dubbo-api</module>
 		<module>com-dubbo-consumer</module>
