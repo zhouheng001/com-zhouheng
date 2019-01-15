@@ -35,11 +35,17 @@
 		<commons-lang3.version>3.7</commons-lang3.version>
 		<commons-collections4.version>4.1</commons-collections4.version>
 		<junit.version>4.0</junit.version>
+		<redis.version>2.9.0</redis.version>
 	</properties>
 
 	<dependencyManagement>
 
 		<dependencies>
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${redis.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-aop</artifactId>
