@@ -1,4 +1,4 @@
-package countlanch;
+package lock;
 
 import java.util.concurrent.CountDownLatch;
 
