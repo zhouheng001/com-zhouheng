@@ -25,9 +25,12 @@ public class Test {
             System.out.println(node.getData());
             node = node.getN();
         }
+    }
 
-        String index = myList.getIndex(0);
-        System.out.println(index);
+    public static void reverse(MyList myList){
+        MyList.Node node = myList.getNode();
+
 
     }
+
 }
