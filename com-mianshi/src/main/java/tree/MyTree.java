@@ -11,15 +11,19 @@ import lombok.Data;
 @Data
 public class MyTree {
   private int value;
-  private MyTree left;
-  private MyTree right;
+  private MyTree leftMode;
+  private MyTree rightMode;
 
   public MyTree() {
   }
 
-  public MyTree(int value, MyTree left, MyTree right) {
+    public MyTree(int value) {
+        this.value = value;
+    }
+
+    public MyTree(int value, MyTree leftMode, MyTree rightMode) {
     this.value = value;
-    this.left = left;
-    this.right = right;
+    this.leftMode = leftMode;
+    this.rightMode = rightMode;
   }
 }
