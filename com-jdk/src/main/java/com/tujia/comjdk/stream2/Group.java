@@ -7,9 +7,9 @@ package com.tujia.comjdk.stream2;
  * @create 2018-11-07 上午 12:18
  */
 public class Group {
-    
+
     public static void main(String[] args) {
-        
+
         // Car m = new Car(12, "M");
         // Car m1 = new Car(12, "W");
         // Car m2 = new Car(13, "M");
@@ -24,6 +24,6 @@ public class Group {
         // System.out.println(collect);
         Student student = new Student();
         student.getAge();
-        
+
     }
 }

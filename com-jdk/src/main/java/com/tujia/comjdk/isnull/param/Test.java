@@ -11,7 +11,7 @@ public class Test {
         RequestParam<Car, Person> r = new RequestParam();
         Car t1 = r.getT1();
         System.out.println(t1);
-        System.out.println(t1 == null  ? "null值" : t1.getPrice());
-        System.out.println(t1 != null && t1.getNum() != null ? t1.getNum():"null值" );
+        System.out.println(t1 == null ? "null值" : t1.getPrice());
+        System.out.println(t1 != null && t1.getNum() != null ? t1.getNum() : "null值");
     }
 }

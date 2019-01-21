@@ -11,11 +11,10 @@ package chuangjianxing.siglenton;
 public enum SinglentonEnum {
 
     //这个枚举元素本身就是单例
-    INSTANCE,RED,GREEN,BLUE;
+    INSTANCE, RED, GREEN, BLUE;
 
 
-
-    public void singlentonOperation(){
+    public void singlentonOperation() {
 
     }
 

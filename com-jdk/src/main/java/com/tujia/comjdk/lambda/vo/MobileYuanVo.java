@@ -10,8 +10,8 @@ import lombok.Data;
  */
 @Data
 public class MobileYuanVo {
-    
+
     private String mobileNumber;
-    
+
     private String changShang;
 }

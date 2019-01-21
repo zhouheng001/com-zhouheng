@@ -9,7 +9,7 @@ import lombok.Data;
  * @create 2019-01-14 上午 12:44
  */
 @Data
-public class TabBarVo extends TabBarVo1{
+public class TabBarVo extends TabBarVo1 {
     public TabBarVo(String title, String contidion) {
         this.title = title;
         Contidion = contidion;
@@ -20,7 +20,6 @@ public class TabBarVo extends TabBarVo1{
 
     /**
      * 标题
-
      */
     private String title;
     /**

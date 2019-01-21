@@ -8,14 +8,14 @@ package chuangjianxing.factory.simplefactory;
  */
 public class CarFactory {
 
-    public Car createCar(String type){
-         if("a".equals(type)){
-                return new AuDi();
-         }else if("b".equals(type)){
-                return new Biyd();
-         }else {
-             return null;
-         }
+    public Car createCar(String type) {
+        if ("a".equals(type)) {
+            return new AuDi();
+        } else if ("b".equals(type)) {
+            return new Biyd();
+        } else {
+            return null;
+        }
     }
 
 }

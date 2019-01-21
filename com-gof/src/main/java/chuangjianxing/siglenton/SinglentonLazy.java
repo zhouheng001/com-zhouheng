@@ -15,13 +15,13 @@ public class SinglentonLazy {
     private static SinglentonLazy singlenton;
 
 
-    private SinglentonLazy(){
+    private SinglentonLazy() {
 
     }
 
     //方法同步调用效率低
-    public static synchronized SinglentonLazy getSinglenton(){
-        if(singlenton==null){
+    public static synchronized SinglentonLazy getSinglenton() {
+        if (singlenton == null) {
             singlenton = new SinglentonLazy();
         }
         return singlenton;

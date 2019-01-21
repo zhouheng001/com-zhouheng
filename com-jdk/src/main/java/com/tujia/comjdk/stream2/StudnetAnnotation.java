@@ -9,11 +9,10 @@ import java.lang.annotation.*;
 @Target(value = {ElementType.ANNOTATION_TYPE, ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER})
 @Retention(value = RetentionPolicy.RUNTIME)
 @Inherited
-public @interface StudnetAnnotation
-{
+public @interface StudnetAnnotation {
     String warn() default "";
-    
+
     int max();
-    
+
     int min();
 }

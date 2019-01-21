@@ -10,20 +10,20 @@ import lombok.Data;
  */
 @Data
 public class MyTree {
-  private int value;
-  private MyTree leftMode;
-  private MyTree rightMode;
+    private int value;
+    private MyTree leftMode;
+    private MyTree rightMode;
 
-  public MyTree() {
-  }
+    public MyTree() {
+    }
 
     public MyTree(int value) {
         this.value = value;
     }
 
     public MyTree(int value, MyTree leftMode, MyTree rightMode) {
-    this.value = value;
-    this.leftMode = leftMode;
-    this.rightMode = rightMode;
-  }
+        this.value = value;
+        this.leftMode = leftMode;
+        this.rightMode = rightMode;
+    }
 }

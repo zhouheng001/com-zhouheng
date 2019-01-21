@@ -18,17 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/test")
 @RestController
 public class TestController {
-    
+
     @Autowired
     private TestService testService;
-    
+
     @Autowired
     private TestPresentation testPresentation;
-    
+
     @RequestMapping("/")
     @TestAnnotation(testEnum = TestEnum.PC, name = "获取数量")
     public int getCount() {
         return testService.getCount() + testPresentation.getSeconds();
     }
-    
+
 }

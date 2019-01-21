@@ -12,12 +12,12 @@ import java.util.stream.Collectors;
  * @create 2018-10-28 下午 11:38
  */
 public class Test111 {
-    
+
     public static void main(String[] args) {
-        
+
         List<String> s1 = new ArrayList<>();
 
-        for (int i=0;i<100000;i++){
+        for (int i = 0; i < 100000; i++) {
             int i1 = new Random().nextInt(1000);
             s1.add(String.valueOf(i1));
         }
@@ -40,25 +40,24 @@ public class Test111 {
 
         long l1 = System.currentTimeMillis();
         List<Integer> collect1 = s1.parallelStream().map(s -> Integer.parseInt(s)).collect(Collectors.toList());
-        System.out.println(System.currentTimeMillis()-l1);
+        System.out.println(System.currentTimeMillis() - l1);
 
 //        long l = System.currentTimeMillis();
 //        List<Integer> collect = s1.stream().map(s -> Integer.parseInt(s)).collect(Collectors.toList());
 //        System.out.println(System.currentTimeMillis()-l);
 
 
-
 //        for (Integer s : collect) {
 //            sum = s + sum;
 //        }
 //        System.out.println(sum);
-        
+
 //        Integer reduce = s1.stream().map(s -> Integer.parseInt(s)).reduce(0, Integer::sum);
 //        System.out.println(reduce);
 //
 //        Optional<Integer> reduce1 = s1.stream().map(s -> Integer.parseInt(s)).reduce(Integer::max);
 //        reduce1.ifPresent(System.out::println);
-        
+
     }
-    
+
 }

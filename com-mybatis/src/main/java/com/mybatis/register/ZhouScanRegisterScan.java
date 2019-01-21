@@ -14,7 +14,7 @@ import org.springframework.core.type.AnnotationMetadata;
  * @author zhouheng
  * @create 2019-01-20 下午 7:46
  */
-public class ZhouScanRegisterScan implements ImportBeanDefinitionRegistrar{
+public class ZhouScanRegisterScan implements ImportBeanDefinitionRegistrar {
 
     @Override
     public void registerBeanDefinitions(AnnotationMetadata metadata, BeanDefinitionRegistry registry) {
@@ -25,6 +25,6 @@ public class ZhouScanRegisterScan implements ImportBeanDefinitionRegistrar{
         GenericBeanDefinition genericBeanDefinition = (GenericBeanDefinition) beanDefinitionBuilder.getBeanDefinition();
 
         genericBeanDefinition.setBeanClass(ZhouFactoryBean.class);
-        registry.registerBeanDefinition("userMapper",genericBeanDefinition);
+        registry.registerBeanDefinition("userMapper", genericBeanDefinition);
     }
 }

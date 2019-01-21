@@ -11,7 +11,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class MyCollections {
     public static void main(String[] args) {
         CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList();
-        for (int i=0;i<10;i++){
+        for (int i = 0; i < 10; i++) {
             copyOnWriteArrayList.add(i);
         }
         System.out.println(copyOnWriteArrayList.size());

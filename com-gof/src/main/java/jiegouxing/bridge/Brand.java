@@ -11,7 +11,7 @@ public interface Brand {
 }
 
 class Lenovo implements Brand {
-    
+
     @Override
     public void brandName() {
         System.out.println("联想");

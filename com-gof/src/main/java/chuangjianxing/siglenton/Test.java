@@ -26,7 +26,7 @@ public class Test {
         singlenton.setSinglentonEnum(BLUE);
         SinglentonLazy singlenton1 = SinglentonLazy.getSinglenton();
         SinglentonEnum singlentonEnum = singlenton1.getSinglentonEnum();
-        switch (singlentonEnum){
+        switch (singlentonEnum) {
             case BLUE:
                 System.out.println("蓝色");
                 break;
@@ -42,7 +42,7 @@ public class Test {
 
         FileInputStream fileInputStream = new FileInputStream("D:\\1.txt");
         ObjectInputStream outputStream = new ObjectInputStream(fileInputStream);
-        SinglentonLazyReflect reflect = (SinglentonLazyReflect)outputStream.readObject();
+        SinglentonLazyReflect reflect = (SinglentonLazyReflect) outputStream.readObject();
 
     }
 

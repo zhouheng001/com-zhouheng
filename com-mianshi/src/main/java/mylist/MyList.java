@@ -46,15 +46,15 @@ public class MyList<T> {
             Node node1 = new Node();
             node1.setData(t);
             node1.setN(node);
-            node= node1;
+            node = node1;
             size++;
         }
     }
 
-    public T getIndex(int index){
+    public T getIndex(int index) {
 
         T t = null;
-        for (int i= size-1;i>=index;i--) {
+        for (int i = size - 1; i >= index; i--) {
             t = node.getData();
             node = node.getN();
         }

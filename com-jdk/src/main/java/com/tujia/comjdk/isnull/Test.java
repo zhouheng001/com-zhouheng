@@ -8,7 +8,7 @@ package com.tujia.comjdk.isnull;
  */
 public class Test implements ITest {
     public static void main(String[] args) {
-         new Test().main1(null);
+        new Test().main1(null);
     }
 
     @Override

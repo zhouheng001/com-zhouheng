@@ -9,7 +9,7 @@ import lombok.Data;
  * @create 2019-01-14 上午 12:20
  */
 @Data
-public class RequestParam<t,r> {
-   private t t1;
-   private r r1;
+public class RequestParam<t, r> {
+    private t t1;
+    private r r1;
 }

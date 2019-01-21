@@ -11,7 +11,6 @@ public class Test {
 
         MyQueue myQueue = new MyQueue(5);
 
-        
 
         Object o = myQueue.removeQueue();
 

@@ -20,22 +20,22 @@ public class DubboController {
     private DubboPresentation dubboPresentation;
 
     @RequestMapping("/t1")
-    public City getCity(){
+    public City getCity() {
         return dubboPresentation.getCity();
     }
 
     @RequestMapping("/t2")
-    public City getCity1(){
+    public City getCity1() {
         return dubboPresentation.getCity1();
     }
 
     @RequestMapping("/t3")
-    public City getCity2(){
+    public City getCity2() {
         return dubboPresentation.getCity2();
     }
 
     @RequestMapping("/t4")
-    public City getCity3(){
+    public City getCity3() {
         return dubboPresentation.getCity3();
     }
 

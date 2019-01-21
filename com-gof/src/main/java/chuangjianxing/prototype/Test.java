@@ -11,7 +11,7 @@ import java.util.Date;
 public class Test {
     public static void main(String[] args) throws CloneNotSupportedException {
         Date date = new Date();
-        Sheep s1 = new Sheep("多利",date);
+        Sheep s1 = new Sheep("多利", date);
         Sheep clone = (Sheep) s1.clone();
         Sheep s2 = s1;
         s1.setName("多利2");

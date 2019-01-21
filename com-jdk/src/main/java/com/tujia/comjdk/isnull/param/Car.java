@@ -10,6 +10,6 @@ import lombok.Data;
  */
 @Data
 public class Car {
- private Double price;
- private Integer num;
+    private Double price;
+    private Integer num;
 }

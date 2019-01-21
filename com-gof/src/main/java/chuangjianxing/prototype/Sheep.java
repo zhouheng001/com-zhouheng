@@ -8,9 +8,9 @@ import java.util.Date;
  * @author zhouheng
  * @create 2018-11-25 下午 9:51
  */
-public class Sheep implements Cloneable{
-   private String name;
-   private Date birthday;
+public class Sheep implements Cloneable {
+    private String name;
+    private Date birthday;
 
     public Sheep() {
     }
@@ -24,7 +24,7 @@ public class Sheep implements Cloneable{
     protected Object clone() throws CloneNotSupportedException {
         Object clone = super.clone();
 
-        Sheep sheep =  (Sheep) clone;
+        Sheep sheep = (Sheep) clone;
         sheep.birthday = (Date) this.birthday.clone();
         return clone;
     }

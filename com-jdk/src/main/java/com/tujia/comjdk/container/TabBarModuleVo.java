@@ -11,6 +11,6 @@ import java.util.List;
  * @create 2019-01-14 上午 12:46
  */
 @Data
-public class TabBarModuleVo<T extends  TabBarVo1> {
-   private List<T> items;
+public class TabBarModuleVo<T extends TabBarVo1> {
+    private List<T> items;
 }

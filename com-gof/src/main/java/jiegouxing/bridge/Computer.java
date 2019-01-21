@@ -11,7 +11,7 @@ public interface Computer {
 }
 
 class Desktop implements Computer {
-    
+
     @Override
     public void sellComputer() {
         System.out.println("台式机!");
@@ -19,7 +19,7 @@ class Desktop implements Computer {
 }
 
 class Laptop implements Computer {
-    
+
     @Override
     public void sellComputer() {
         System.out.println("笔记本!");
@@ -27,7 +27,7 @@ class Laptop implements Computer {
 }
 
 class Pad implements Computer {
-    
+
     @Override
     public void sellComputer() {
         System.out.println("笔记本!");

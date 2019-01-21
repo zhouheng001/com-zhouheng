@@ -22,7 +22,7 @@ public class TestBigDecial {
         // 对比：compareTo（BigDecimal）
         // 设置小数点精确度：setScale（int）
         // 设置保留小数点精确度并添加保留方式（直接加1或者四舍五入）：setScale（int， int）
-        
+
         // BigDecimal bigDecimal =new BigDecimal(0);
         // for (int i=1;i<5;i++){
         // bigDecimal = bigDecimal.add(new BigDecimal(i));
@@ -50,7 +50,7 @@ public class TestBigDecial {
         // Map<Integer, List<Integer>> collect = s1.stream().map(ss ->
         // Integer.parseInt(ss)).parallel().collect(Collectors.groupingBy(ss -> ss % 2));
         // System.out.println(collect);
-        
+
         // %s: 字符串类型，如："ljq"
         // %b: 布尔类型，如：true
         // %d: 整数类型(十进制)，如：99
@@ -60,6 +60,6 @@ public class TestBigDecial {
         BigDecimal bigDecimal = new BigDecimal(4);
         BigDecimal subtract = bigDecimal.subtract(new BigDecimal(1));
         System.out.println(String.format("4-2=%s", subtract));
-        
+
     }
 }

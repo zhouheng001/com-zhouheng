@@ -13,12 +13,12 @@ import java.util.List;
  * @create 2018-11-15 上午 12:00
  */
 public class Test1 {
-    
+
     public static void main(String[] args) {
-        
+
         List<Integer> nums = null;
         String name = null;
-        
+
         if (StringUtils.isEmpty(name)) {
             System.out.println("c3shi");
         }
@@ -29,11 +29,11 @@ public class Test1 {
         if (StringUtils.isEmpty(name)) {
             System.out.println("c3shi");
         }
-        
+
         if (StringUtils.isBlank(name)) {
             System.out.println("isblank");
         }
-        
+
         if (CollectionUtils.isEmpty(nums)) {
             System.out.println("集合是isEmpty");
         }
@@ -44,10 +44,10 @@ public class Test1 {
         if (CollectionUtils.isEmpty(nums)) {
             System.out.println("集合是isEmpty");
         }
-        
+
         if (!name.equals(1)) {
             System.out.println(1);
         }
-        
+
     }
 }

@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class TestPresentation {
-    
+
     private static int seconds = 3000;
-    
+
     public int getSeconds() {
         return seconds;
     }
-    
+
 }

@@ -59,21 +59,21 @@ class Folder implements AbstractFile {
         this.name = name;
     }
 
-    public void add(AbstractFile file){
+    public void add(AbstractFile file) {
         list.add(file);
     }
 
-    public void remove(AbstractFile file){
+    public void remove(AbstractFile file) {
         list.remove(file);
     }
 
-    public AbstractFile getChile(int index){
+    public AbstractFile getChile(int index) {
         return list.get(index);
     }
 
     @Override
     public void killVirus() {
-        System.out.println("---文件夹："+name+"，进行查杀!");
+        System.out.println("---文件夹：" + name + "，进行查杀!");
         for (AbstractFile abstractFile : list) {
             abstractFile.killVirus();
         }

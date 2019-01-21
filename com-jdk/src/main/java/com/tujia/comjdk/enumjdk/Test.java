@@ -8,12 +8,11 @@ package com.tujia.comjdk.enumjdk;
  */
 public class Test {
     public static void main(String[] args) {
-        
+
         RedEnum redEnum = RedEnum.Min;
         if (RedEnum.Max.getX() == redEnum.getX()) {
             redEnum = RedEnum.Max;
-        }
-        else if (RedEnum.Min.getX() == redEnum.getX()) {
+        } else if (RedEnum.Min.getX() == redEnum.getX()) {
             redEnum = RedEnum.Min;
         }
         System.out.println(redEnum.getY());

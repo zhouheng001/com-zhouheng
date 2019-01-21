@@ -6,7 +6,7 @@ package jiegouxing.proxy.staticproxy;
  * @author zhouheng
  * @create 2018-12-02 下午 11:44
  */
-public class ProxyStar implements Star{
+public class ProxyStar implements Star {
 
     private Star star;
 
@@ -26,6 +26,6 @@ public class ProxyStar implements Star{
 
     @Override
     public void sing() {
-       star.sing();
+        star.sing();
     }
 }

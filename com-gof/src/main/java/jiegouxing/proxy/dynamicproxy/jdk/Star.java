@@ -5,8 +5,8 @@ package jiegouxing.proxy.dynamicproxy.jdk;
  */
 public interface Star {
     void bookTicket();
-    
+
     void collectMoney();
-    
+
     void sing();
 }

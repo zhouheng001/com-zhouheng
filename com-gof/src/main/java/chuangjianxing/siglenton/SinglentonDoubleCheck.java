@@ -11,14 +11,14 @@ public class SinglentonDoubleCheck {
 
     private static SinglentonDoubleCheck singlentonDoubleCheck;
 
-    private SinglentonDoubleCheck(){
+    private SinglentonDoubleCheck() {
 
     }
 
-    public static SinglentonDoubleCheck getSingleton(){
-        if(singlentonDoubleCheck==null){
-            synchronized (SinglentonDoubleCheck.class){
-                if(singlentonDoubleCheck==null){
+    public static SinglentonDoubleCheck getSingleton() {
+        if (singlentonDoubleCheck == null) {
+            synchronized (SinglentonDoubleCheck.class) {
+                if (singlentonDoubleCheck == null) {
                     singlentonDoubleCheck = new SinglentonDoubleCheck();
                 }
             }

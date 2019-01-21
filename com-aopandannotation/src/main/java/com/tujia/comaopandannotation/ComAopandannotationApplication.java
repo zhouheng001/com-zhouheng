@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ComAopandannotationApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ComAopandannotationApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ComAopandannotationApplication.class, args);
+    }
 
 }
 

@@ -12,11 +12,11 @@ import java.util.Date;
  */
 @Data
 public class MobileVo {
-    
+
     private String mobileNumber;
-    
+
     private String changShang;
-    
+
     private Date date;
-    
+
 }

@@ -12,7 +12,7 @@ public class Adapter2 implements Target {
 
     @Override
     public void handleRequest() {
-             adaptee.request();
+        adaptee.request();
     }
 
     public Adapter2(Adaptee adaptee) {

@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ComDubboProviderApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ComDubboProviderApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ComDubboProviderApplication.class, args);
+    }
 }
 

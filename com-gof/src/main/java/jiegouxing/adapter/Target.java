@@ -7,5 +7,5 @@ package jiegouxing.adapter;
  * @create 2018-12-02 下午 10:24
  */
 public interface Target {
-   void handleRequest();
+    void handleRequest();
 }

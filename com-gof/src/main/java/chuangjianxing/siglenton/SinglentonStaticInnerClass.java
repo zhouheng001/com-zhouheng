@@ -9,14 +9,14 @@ package chuangjianxing.siglenton;
  */
 public class SinglentonStaticInnerClass {
 
-    private static class SinglentonInstanceClass{
-         private static final SinglentonStaticInnerClass staticInnerClasss = new SinglentonStaticInnerClass();
+    private static class SinglentonInstanceClass {
+        private static final SinglentonStaticInnerClass staticInnerClasss = new SinglentonStaticInnerClass();
     }
 
-    private SinglentonStaticInnerClass(){
+    private SinglentonStaticInnerClass() {
     }
 
-    public static SinglentonStaticInnerClass getsinglenton(){
+    public static SinglentonStaticInnerClass getsinglenton() {
         return SinglentonInstanceClass.staticInnerClasss;
     }
 

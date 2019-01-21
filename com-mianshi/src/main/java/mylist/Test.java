@@ -8,8 +8,8 @@ package mylist;
  */
 public class Test {
     /**
-     * @see MyList
      * @param args
+     * @see MyList
      */
     public static void main(String[] args) {
         MyList<String> myList = new MyList();
@@ -20,7 +20,7 @@ public class Test {
         System.out.println(myList);
 
         MyList<String>.Node node = myList.getNode();
-        while (node!=null){
+        while (node != null) {
             System.out.println(node.getData());
             node = node.getN();
         }
@@ -28,14 +28,14 @@ public class Test {
         /** 反转 */
         reverse(myList);
         MyList<String>.Node node1 = myList.getNode();
-        while (node1!=null){
+        while (node1 != null) {
             System.out.println(node1.getData());
             node1 = node1.getN();
         }
     }
 
-    public static void reverse(MyList myList){
-        if(myList.getSize()==0){
+    public static void reverse(MyList myList) {
+        if (myList.getSize() == 0) {
             return;
         }
 
@@ -44,8 +44,8 @@ public class Test {
 
     }
 
-    public static MyList.Node  reverseNode(MyList.Node node){
-        if(node==null || node.getN()==null){
+    public static MyList.Node reverseNode(MyList.Node node) {
+        if (node == null || node.getN() == null) {
             return node;
         }
 

@@ -29,25 +29,24 @@ public class Test {
 
         /** 输出二叉树的第n层所有节点*/
 
-        getCengNode(node,3);
+        getCengNode(node, 3);
 
     }
 
-    public static void getCengNode(MyTree myTree,int n){
-        if(myTree==null){
+    public static void getCengNode(MyTree myTree, int n) {
+        if (myTree == null) {
             return;
         }
 
-        if(n==1){
+        if (n == 1) {
             System.out.println(myTree.getValue());
             return;
         }
 
         n--;
 
-        getCengNode(myTree.getLeftMode(),n);
-        getCengNode(myTree.getRightMode(),n);
-
+        getCengNode(myTree.getLeftMode(), n);
+        getCengNode(myTree.getRightMode(), n);
 
 
     }

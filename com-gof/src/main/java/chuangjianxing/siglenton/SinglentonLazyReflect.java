@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 /**
  * 描述:
- *  测试反射和反序列化
+ * 测试反射和反序列化
  *
  * @author zhouheng
  * @create 2018-11-20 上午 1:09
  */
-public class SinglentonLazyReflect implements Serializable{
+public class SinglentonLazyReflect implements Serializable {
     //全局计数器
     SinglentonEnum singlentonEnum;
 
@@ -17,15 +17,15 @@ public class SinglentonLazyReflect implements Serializable{
     private static SinglentonLazyReflect singlenton;
 
     //防止反射创建对象
-    private SinglentonLazyReflect(){
-           if(singlenton==null){
-               throw new RuntimeException();
-           }
+    private SinglentonLazyReflect() {
+        if (singlenton == null) {
+            throw new RuntimeException();
+        }
     }
 
     //方法同步调用效率低
-    public static synchronized SinglentonLazyReflect getSinglenton(){
-        if(singlenton==null){
+    public static synchronized SinglentonLazyReflect getSinglenton() {
+        if (singlenton == null) {
             singlenton = new SinglentonLazyReflect();
         }
         return singlenton;
@@ -40,7 +40,7 @@ public class SinglentonLazyReflect implements Serializable{
     }
 
     //反序列化直接调用这个方法
-    private Object readResolve(){
+    private Object readResolve() {
         return singlenton;
     }
 }
