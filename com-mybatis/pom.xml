@@ -11,7 +11,7 @@
 
 	<artifactId>com-mybatis</artifactId>
 	<name>com-mybatis</name>
-	<description>Demo project for Spring Boot</description>
+	<description>手写mybatis</description>
 
 	<dependencies>
 		<dependency>
