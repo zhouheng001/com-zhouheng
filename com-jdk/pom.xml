@@ -4,7 +4,7 @@
 
 
     <parent>
-        <groupId>com.tujia</groupId>
+        <groupId>com.zhouheng</groupId>
         <artifactId>com-zhouheng</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>

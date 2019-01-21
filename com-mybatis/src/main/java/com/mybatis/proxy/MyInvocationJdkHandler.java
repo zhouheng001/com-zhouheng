@@ -1,4 +1,6 @@
-package com.mybatis;
+package com.mybatis.proxy;
+
+import org.springframework.cglib.proxy.MethodInterceptor;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -9,7 +11,7 @@ import java.lang.reflect.Method;
  * @author zhouheng
  * @create 2019-01-20 下午 9:01
  */
-public class MyInvocationHandler implements InvocationHandler {
+public class MyInvocationJdkHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

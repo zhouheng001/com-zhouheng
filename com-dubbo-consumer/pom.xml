@@ -4,7 +4,7 @@
 
 
     <parent>
-        <groupId>com.tujia</groupId>
+        <groupId>com.zhouheng</groupId>
         <artifactId>com-zhouheng</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -30,7 +30,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.tujia</groupId>
+            <groupId>com.zhouheng</groupId>
             <artifactId>com-dubbo-api</artifactId>
             <version>${project.version}</version>
         </dependency>
