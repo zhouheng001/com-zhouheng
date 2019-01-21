@@ -18,14 +18,15 @@ import java.util.Map.Entry;
 
 public class MyDispatcherServlet extends HttpServlet {
 
+    //读取配置
     private Properties properties = new Properties();
-
+    //存放Spring初始化扫描到的类名
     private List<String> classNames = new ArrayList<>();
-
+    //将扫描到的类型实例化放到此容器中,key值为类型名
     private Map<String, Object> ioc = new HashMap<>();
-
+    //将扫描到的url和对应的方法放到容器
     private Map<String, Method> handlerMapping = new HashMap<>();
-
+    //存放request请求的类和对应的方法
     private Map<String, Object> controllerMap = new HashMap<>();
 
 

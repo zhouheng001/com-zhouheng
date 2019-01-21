@@ -12,6 +12,12 @@
     <artifactId>com-myspring</artifactId>
     <name>com-myspring</name>
     <description>Demo project for Spring Boot</description>
-    
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
