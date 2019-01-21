@@ -25,7 +25,7 @@
         <module>com-dubbo-api</module>
         <module>com-dubbo-consumer</module>
         <module>com-mybatis</module>
-        <module>com-myspring</module>
+        <module>com-myspringmvc</module>
     </modules>
 
     <properties>
