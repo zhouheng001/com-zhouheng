@@ -18,39 +18,39 @@ public class ChangYongSuanFa {
     /**
      * 直接插入排序
      */
-    public void insertSort(int [] a){
-        int len=a.length;//单独把数组长度拿出来，提高效率
+    public void insertSort(int[] a) {
+        int len = a.length;//单独把数组长度拿出来，提高效率
         int insertNum;//要插入的数
-        for(int i=1;i<len;i++){//因为第一次不用，所以从1开始
-            insertNum=a[i];
-            int j=i-1;//序列元素个数
-            while(j>=0&&a[j]>insertNum){//从后往前循环，将大于insertNum的数向后移动
-                a[j+1]=a[j];//元素向后移动
+        for (int i = 1; i < len; i++) {//因为第一次不用，所以从1开始
+            insertNum = a[i];
+            int j = i - 1;//序列元素个数
+            while (j >= 0 && a[j] > insertNum) {//从后往前循环，将大于insertNum的数向后移动
+                a[j + 1] = a[j];//元素向后移动
                 j--;
             }
-            a[j+1]=insertNum;//找到位置，插入当前元素
+            a[j + 1] = insertNum;//找到位置，插入当前元素
         }
     }
 
     /**
      * 希尔排序
      */
-    public void sheelSort(int [] a){
-        int len=a.length;//单独把数组长度拿出来，提高效率
-        while(len!=0){
-            len=len/2;
-            for(int i=0;i<len;i++){//分组
-                for(int j=i+len;j<a.length;j+=len){//元素从第二个开始
-                    int k=j-len;//k为有序序列最后一位的位数
-                    int temp=a[j];//要插入的元素
+    public void sheelSort(int[] a) {
+        int len = a.length;//单独把数组长度拿出来，提高效率
+        while (len != 0) {
+            len = len / 2;
+            for (int i = 0; i < len; i++) {//分组
+                for (int j = i + len; j < a.length; j += len) {//元素从第二个开始
+                    int k = j - len;//k为有序序列最后一位的位数
+                    int temp = a[j];//要插入的元素
                     /*for(;k>=0&&temp<a[k];k-=len){
                         a[k+len]=a[k];
                     }*/
-                    while(k>=0&&temp<a[k]){//从后往前遍历
-                        a[k+len]=a[k];
-                        k-=len;//向后移动len位
+                    while (k >= 0 && temp < a[k]) {//从后往前遍历
+                        a[k + len] = a[k];
+                        k -= len;//向后移动len位
                     }
-                    a[k+len]=temp;
+                    a[k + len] = temp;
                 }
             }
         }
@@ -59,66 +59,68 @@ public class ChangYongSuanFa {
     /**
      * 简单选择排序
      */
-    public void selectSort(int[]a){
-        int len=a.length;
-        for(int i=0;i<len;i++){//循环次数
-            int value=a[i];
-            int position=i;
-            for(int j=i+1;j<len;j++){//找到最小的值和位置
-                if(a[j]<value){
-                    value=a[j];
-                    position=j;
+    public void selectSort(int[] a) {
+        int len = a.length;
+        for (int i = 0; i < len; i++) {//循环次数
+            int value = a[i];
+            int position = i;
+            for (int j = i + 1; j < len; j++) {//找到最小的值和位置
+                if (a[j] < value) {
+                    value = a[j];
+                    position = j;
                 }
             }
-            a[position]=a[i];//进行交换
-            a[i]=value;
+            a[position] = a[i];//进行交换
+            a[i] = value;
         }
     }
 
     /**
      * 堆排序
      */
-    public  void heapSort(int[] a){
-        int len=a.length;
+    public void heapSort(int[] a) {
+        int len = a.length;
         //循环建堆
-        for(int i=0;i<len-1;i++){
+        for (int i = 0; i < len - 1; i++) {
             //建堆
-            buildMaxHeap(a,len-1-i);
+            buildMaxHeap(a, len - 1 - i);
             //交换堆顶和最后一个元素
-            swap(a,0,len-1-i);
+            swap(a, 0, len - 1 - i);
         }
     }
+
     //交换方法
-    private  void swap(int[] data, int i, int j) {
-        int tmp=data[i];
-        data[i]=data[j];
-        data[j]=tmp;
+    private void swap(int[] data, int i, int j) {
+        int tmp = data[i];
+        data[i] = data[j];
+        data[j] = tmp;
     }
+
     //对data数组从0到lastIndex建大顶堆
     private void buildMaxHeap(int[] data, int lastIndex) {
         //从lastIndex处节点（最后一个节点）的父节点开始
-        for(int i=(lastIndex-1)/2;i>=0;i--){
+        for (int i = (lastIndex - 1) / 2; i >= 0; i--) {
             //k保存正在判断的节点
-            int k=i;
+            int k = i;
             //如果当前k节点的子节点存在
-            while(k*2+1<=lastIndex){
+            while (k * 2 + 1 <= lastIndex) {
                 //k节点的左子节点的索引
-                int biggerIndex=2*k+1;
+                int biggerIndex = 2 * k + 1;
                 //如果biggerIndex小于lastIndex，即biggerIndex+1代表的k节点的右子节点存在
-                if(biggerIndex<lastIndex){
+                if (biggerIndex < lastIndex) {
                     //若果右子节点的值较大
-                    if(data[biggerIndex]<data[biggerIndex+1]){
+                    if (data[biggerIndex] < data[biggerIndex + 1]) {
                         //biggerIndex总是记录较大子节点的索引
                         biggerIndex++;
                     }
                 }
                 //如果k节点的值小于其较大的子节点的值
-                if(data[k]<data[biggerIndex]){
+                if (data[k] < data[biggerIndex]) {
                     //交换他们
-                    swap(data,k,biggerIndex);
+                    swap(data, k, biggerIndex);
                     //将biggerIndex赋予k，开始while循环的下一次循环，重新保证k节点的值大于其左右子节点的值
-                    k=biggerIndex;
-                }else{
+                    k = biggerIndex;
+                } else {
                     break;
                 }
             }
@@ -128,14 +130,14 @@ public class ChangYongSuanFa {
     /**
      * 冒泡排序
      */
-    public void bubbleSort(int []a){
-        int len=a.length;
-        for(int i=0;i<len;i++){
-            for(int j=0;j<len-i-1;j++){//注意第二重循环的条件
-                if(a[j]>a[j+1]){
-                    int temp=a[j];
-                    a[j]=a[j+1];
-                    a[j+1]=temp;
+    public void bubbleSort(int[] a) {
+        int len = a.length;
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len - i - 1; j++) {//注意第二重循环的条件
+                if (a[j] > a[j + 1]) {
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
                 }
             }
         }
@@ -144,32 +146,32 @@ public class ChangYongSuanFa {
     /**
      * 快速排序
      */
-    public void quickSort(int[]a,int start,int end){
-        if(start<end){
-            int baseNum=a[start];//选基准值
+    public void quickSort(int[] a, int start, int end) {
+        if (start < end) {
+            int baseNum = a[start];//选基准值
             int midNum;//记录中间值
-            int i=start;
-            int j=end;
-            do{
-                while((a[i]<baseNum)&&i<end){
+            int i = start;
+            int j = end;
+            do {
+                while ((a[i] < baseNum) && i < end) {
                     i++;
                 }
-                while((a[j]>baseNum)&&j>start){
+                while ((a[j] > baseNum) && j > start) {
                     j--;
                 }
-                if(i<=j){
-                    midNum=a[i];
-                    a[i]=a[j];
-                    a[j]=midNum;
+                if (i <= j) {
+                    midNum = a[i];
+                    a[i] = a[j];
+                    a[j] = midNum;
                     i++;
                     j--;
                 }
-            }while(i<=j);
-            if(start<j){
-                quickSort(a,start,j);
+            } while (i <= j);
+            if (start < j) {
+                quickSort(a, start, j);
             }
-            if(end>i){
-                quickSort(a,i,end);
+            if (end > i) {
+                quickSort(a, i, end);
             }
         }
     }
@@ -177,7 +179,7 @@ public class ChangYongSuanFa {
     /**
      * 归并排序
      */
-    public  void mergeSort(int[] a, int left, int right) {
+    public void mergeSort(int[] a, int left, int right) {
         int t = 1;// 每组元素个数
         int size = right - left + 1;
         while (t < size) {
@@ -195,6 +197,7 @@ public class ChangYongSuanFa {
 
     /**
      * 归并排序
+     *
      * @param data
      * @param p
      * @param q
@@ -225,6 +228,7 @@ public class ChangYongSuanFa {
 
     /**
      * 基础排序
+     *
      * @param a
      */
     public void baseSort(int[] a) {
@@ -269,7 +273,6 @@ public class ChangYongSuanFa {
             }
         }
     }
-
 
 
 }
