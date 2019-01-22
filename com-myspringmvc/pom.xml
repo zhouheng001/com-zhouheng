@@ -10,6 +10,7 @@
 
     <artifactId>com-myspringmvc</artifactId>
     <name>com-myspringmvc</name>
+    <packaging>war</packaging>
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
