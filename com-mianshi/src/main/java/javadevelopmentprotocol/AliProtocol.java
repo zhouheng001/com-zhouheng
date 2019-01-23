@@ -57,11 +57,10 @@ public class AliProtocol {
      * 使用 JDK8 的 Optional 类来防止 NPE 问题
      */
    static void testNPE(){
-        Optional<Integer> optional = Optional.ofNullable(getNpe(2));
+        Optional<Integer> optional = Optional.ofNullable(getNpe(3));
 
-        if(optional.isPresent()){
-            System.out.println(optional.get());
-        }
+            Integer integer = optional.get();
+            System.out.println(integer);
 
     }
 
