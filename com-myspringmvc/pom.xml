@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.zhouheng</groupId>
-        <artifactId>com-zhouheng</artifactId>
+        <artifactId>com-java</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 

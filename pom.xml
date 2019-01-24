@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.zhouheng</groupId>
-    <artifactId>com-zhouheng</artifactId>
+    <artifactId>com-java</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -27,6 +27,7 @@
         <module>com-mybatis</module>
         <module>com-myspringmvc</module>
         <module>com-myspring</module>
+        <module>com-springsource</module>
     </modules>
 
     <properties>
@@ -41,6 +42,7 @@
         <redis.version>2.9.0</redis.version>
         <mybatis.version>1.3.2</mybatis.version>
         <servlet.version>3.0.1</servlet.version>
+        <context.version>4.3.11.RELEASE</context.version>
     </properties>
 
     <dependencyManagement>
@@ -50,6 +52,16 @@
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>${redis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${context.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-logging</groupId>     
+                <artifactId>commons-logging</artifactId> 
+                <version>1.2</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
