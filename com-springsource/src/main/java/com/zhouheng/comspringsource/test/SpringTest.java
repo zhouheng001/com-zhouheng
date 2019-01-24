@@ -1,15 +1,15 @@
+package com.zhouheng.comspringsource.test;
+
 import com.zhouheng.comspringsource.config.SpringConfig;
-import com.zhouheng.comspringsource.pojo.dto.Person;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.core.env.Environment;
 
 /**
  * @author zhouheng
  * @Description:
  * @create 2019-01-24 14:18
  */
-public class SpringTest {
+public class SpringTest{
     public static void main(String[] args) {
 //        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
 //        Person person = (Person) applicationContext.getBean("person");
