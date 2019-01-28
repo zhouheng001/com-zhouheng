@@ -1,9 +1,11 @@
 package com.zhouheng.comspringsource.config;
 
 import com.zhouheng.comspringsource.condition.LinuxCondition;
+import com.zhouheng.comspringsource.condition.MyImportBeanDefinitionRegistrar;
 import com.zhouheng.comspringsource.condition.MyImportSelector;
 import com.zhouheng.comspringsource.condition.WindowCondition;
 import com.zhouheng.comspringsource.pojo.dto.Color;
+import com.zhouheng.comspringsource.pojo.dto.ColorFactoryBean;
 import com.zhouheng.comspringsource.pojo.dto.Person;
 import com.zhouheng.comspringsource.pojo.dto.Red;
 import com.zhouheng.comspringsource.service.UserService;
@@ -27,7 +29,7 @@ import org.springframework.stereotype.Controller;
 
 }
 )
-@Import({Color.class, Red.class, MyImportSelector.class})
+@Import({Color.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 public class SpringConfig {
 
     @Scope("prototype")
@@ -64,4 +66,8 @@ public class SpringConfig {
         return new Person("window", 22);
     }
 
+    @Bean
+    public ColorFactoryBean colorFactoryBean(){
+        return new ColorFactoryBean();
+    }
 }

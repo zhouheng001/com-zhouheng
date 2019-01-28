@@ -9,5 +9,20 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class UserDao {
+   private int lable=1;
 
+    @Override
+    public String toString() {
+        return "UserDao{" +
+                "lable=" + lable +
+                '}';
+    }
+
+    public int getLable() {
+        return lable;
+    }
+
+    public void setLable(int lable) {
+        this.lable = lable;
+    }
 }
