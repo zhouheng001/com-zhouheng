@@ -12,6 +12,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class Test {
     public static void main(String[] args) {
+
+//        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+//        Person person = (Person) applicationContext.getBean("person");
+//        System.out.println(person);
+
+
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(App.class);
         applicationContext.start();
         UserMapper userMapper = (UserMapper) applicationContext.getBean("userMapper");
