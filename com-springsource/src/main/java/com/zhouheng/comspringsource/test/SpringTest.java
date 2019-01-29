@@ -23,9 +23,12 @@ public class SpringTest{
 //        for (String s : beanNamesForType) {
 //            System.out.println(s);
 //        }
+
         String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
-            System.out.println(beanDefinitionName);
+            if(!beanDefinitionName.contains("context")){
+                System.out.println(beanDefinitionName);
+            }
         }
 
 //        Environment environment = applicationContext.getEnvironment();

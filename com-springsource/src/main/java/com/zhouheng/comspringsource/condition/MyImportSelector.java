@@ -12,6 +12,6 @@ public class MyImportSelector implements ImportSelector {
 
     @Override
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
-        return new String[0];
+        return new String[]{"com.zhouheng.comspringsource.pojo.dto.Blue"};
     }
 }
