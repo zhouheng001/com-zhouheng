@@ -14,20 +14,20 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class SpringTest {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Person person = (Person) applicationContext.getBean("person");
+//        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+//        Person person = (Person) applicationContext.getBean("person");
 //        Person person = applicationContext.getBean(Person.class);
-        System.out.println(person);
-       ((ClassPathXmlApplicationContext) applicationContext).close();
+//        System.out.println(person);
+//       ((ClassPathXmlApplicationContext) applicationContext).close();
 
 
-//        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfig.class);
-//        Person bean = applicationContext.getBean(Person.class);
-//        System.out.println(bean);
-//        String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
-//        for (String s : beanNamesForType) {
-//            System.out.println(s);
-//        }
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfig.class);
+        Person bean = applicationContext.getBean(Person.class);
+        System.out.println(bean);
+        String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
+        for (String s : beanNamesForType) {
+            System.out.println(s);
+        }
 //        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
 //        for (String beanDefinitionName : beanDefinitionNames) {
 //            System.out.println(beanDefinitionName);

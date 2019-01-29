@@ -14,5 +14,7 @@
 		<!--<property name="name" value="zhangsan"></property>-->
 	</bean>
 
+	<!--开启基于AOP的注解功能-->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
 </beans>
