@@ -9,9 +9,10 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 /**
  * @author zhouheng
  * @Description:
+ *   @EnableAspectJAutoProxy: 开启AOP功能,其实也就是注册 {@link org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator}组件
  * @create 2019-01-29 11:59
  */
-@EnableAspectJAutoProxy  //
+@EnableAspectJAutoProxy
 @Configuration
 public class SpringConfigAop {
 

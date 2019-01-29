@@ -4,6 +4,7 @@ import com.zhouheng.comspringsource.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
@@ -32,6 +33,11 @@ public class UserService {
 
     public void Test(){
         System.out.println("输出userdao："+userDao1);
+    }
+
+    @Transactional
+    public void insert(){
+        userDao1.insert();
     }
 
 }

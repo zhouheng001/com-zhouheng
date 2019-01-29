@@ -1,5 +1,6 @@
 package com.zhouheng.comspringsource.condition;
 
+import com.zhouheng.comspringsource.pojo.dto.RainBow;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.RootBeanDefinition;
@@ -21,7 +22,7 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
         boolean person = registry.containsBeanDefinition("person");
-        BeanDefinition beanDefinition = new RootBeanDefinition("com.zhouheng.comspringsource.pojo.dto.RainBow");
+        BeanDefinition beanDefinition = new RootBeanDefinition(RainBow.class.getName());
         if(person){
             registry.registerBeanDefinition("rainbow",beanDefinition);
         }
