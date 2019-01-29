@@ -1,6 +1,7 @@
 package com.zhouheng.comspringsource.test;
 
 import com.zhouheng.comspringsource.config.SpringConfig;
+import com.zhouheng.comspringsource.pojo.dto.Blue;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -30,6 +31,8 @@ public class SpringTest{
                 System.out.println(beanDefinitionName);
             }
         }
+        Blue bean = (Blue) applicationContext.getBean(Blue.class.getName());
+        System.out.println(bean);
 
 //        Environment environment = applicationContext.getEnvironment();
 //        String property = environment.getProperty("os.name");

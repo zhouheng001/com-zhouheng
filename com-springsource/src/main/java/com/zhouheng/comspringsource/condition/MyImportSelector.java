@@ -1,5 +1,6 @@
 package com.zhouheng.comspringsource.condition;
 
+import com.zhouheng.comspringsource.pojo.dto.Blue;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
 
@@ -12,6 +13,6 @@ public class MyImportSelector implements ImportSelector {
 
     @Override
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
-        return new String[]{"com.zhouheng.comspringsource.pojo.dto.Blue"};
+        return new String[]{Blue.class.getName()};
     }
 }
