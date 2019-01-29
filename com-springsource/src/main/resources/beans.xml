@@ -7,10 +7,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
-	<bean id="person" class="com.zhouheng.comspringsource.pojo.dto.Person"  scope="prototype" lazy-init="false">
-		<property name="age" value="22"></property>
-		<property name="name" value="zhangsan"></property>
+	<!--<context:property-placeholder location="classpath:name.properties"></context:property-placeholder>-->
+	<!--<context:component-scan base-package="com.zhouheng.comspringsource.controller"></context:component-scan>-->
+	<bean id="person" class="com.zhouheng.comspringsource.pojo.dto.Person"  scope="prototype" lazy-init="false" init-method="init" destroy-method="destsory">
+		<!--<property name="age" value="22"></property>-->
+		<!--<property name="name" value="zhangsan"></property>-->
 	</bean>
 
+	<!--开启基于AOP的注解功能-->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
 </beans>

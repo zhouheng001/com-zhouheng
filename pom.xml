@@ -43,6 +43,12 @@
         <mybatis.version>1.3.2</mybatis.version>
         <servlet.version>3.0.1</servlet.version>
         <context.version>4.3.11.RELEASE</context.version>
+        <aspects.version>4.3.11.RELEASE</aspects.version>
+        <jdbc.version>4.3.11.RELEASE</jdbc.version>
+        <inject.version>1</inject.version>
+        <c3p0.version>0.9.1.2</c3p0.version>
+        <mysql.version>5.1.44</mysql.version>
+        <commons-logging.version>1.2</commons-logging.version>
     </properties>
 
     <dependencyManagement>
@@ -59,9 +65,34 @@
                 <version>${context.version}</version>
             </dependency>
             <dependency>
-                <groupId>commons-logging</groupId>     
-                <artifactId>commons-logging</artifactId> 
-                <version>1.2</version>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${jdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>${aspects.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>c3p0</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>${c3p0.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>${inject.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons-logging.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
