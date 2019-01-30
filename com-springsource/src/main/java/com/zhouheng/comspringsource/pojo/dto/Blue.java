@@ -7,4 +7,17 @@ package com.zhouheng.comspringsource.pojo.dto;
  */
 public class Blue {
 
+    public Blue(){
+        System.out.println("执行构造方法!");
+    }
+
+    public void init(){
+        System.out.println("执行初始化方法!");
+    }
+
+    public void destory(){
+        System.out.println("执行销毁方法!");
+    }
+
+
 }
