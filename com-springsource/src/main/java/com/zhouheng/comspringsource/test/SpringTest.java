@@ -20,7 +20,7 @@ public class SpringTest {
 
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfig.class);
-        Person bean = applicationContext.getBean(Person.class);
+        Person bean = (Person) applicationContext.getBean("zhouheng");
         System.out.println(bean);
         String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
         for (String s : beanNamesForType) {
