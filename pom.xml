@@ -28,6 +28,7 @@
         <module>com-myspringmvc</module>
         <module>com-myspring</module>
         <module>com-springsource</module>
+        <module>com-servlet3</module>
     </modules>
 
     <properties>
