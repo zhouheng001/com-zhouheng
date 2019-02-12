@@ -2,6 +2,7 @@ package com.zhouheng.comservlet3.servlet;
 
 import com.zhouheng.comservlet3.compont.filter.MyFilter;
 import com.zhouheng.comservlet3.compont.listener.MyListener;
+import com.zhouheng.comservlet3.compont.servlet.MyServlet;
 import com.zhouheng.comservlet3.service.HelloService;
 
 import javax.servlet.*;
@@ -33,7 +34,7 @@ public class MyServletContainerInitializer implements ServletContainerInitialize
         ctx.addListener(MyListener.class);
         //添加过滤器
         FilterRegistration.Dynamic filter = ctx.addFilter("myfilter", MyFilter.class);
-        filter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST),true,"/*");
+        filter.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
 
     }
 }

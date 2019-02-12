@@ -13,7 +13,7 @@ import java.io.IOException;
  * @create 2019-01-31 12:02
  */
 @WebServlet(value = "/servlet3.0")
-public class MyServlet extends HttpServlet {
+public class MyServlet1 extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
