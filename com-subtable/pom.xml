@@ -11,7 +11,7 @@
 
     <artifactId>com-subtable</artifactId>
     <packaging>war</packaging>
-    <name>subDbTable Maven Webapp</name>
+    <name>com-subtable</name>
 
     <properties>
         <!-- spring版本号 -->
