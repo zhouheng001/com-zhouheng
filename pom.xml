@@ -29,6 +29,8 @@
         <module>com-myspring</module>
         <module>com-springsource</module>
         <module>com-servlet3</module>
+        <module>com-subtable</module>
+        <module>com-springmvcandservlet3</module>
     </modules>
 
     <properties>
