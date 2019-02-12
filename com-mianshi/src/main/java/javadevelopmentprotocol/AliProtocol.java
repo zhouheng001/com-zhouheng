@@ -1,8 +1,8 @@
 package javadevelopmentprotocol;
 
-import org.junit.Test;
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 /**
  * 描述:
@@ -35,39 +35,39 @@ public class AliProtocol {
 
     }
 
-    void myTestMap(){
+    void myTestMap() {
         Map maps = new HashMap();
     }
 
     /**
      * 时间规范
-     * @Description
-     * 如果是 JDK 8 的应用，
+     *
+     * @Description 如果是 JDK 8 的应用，
      * 可以使用 Instant 代替 Date ，
      * LocalDateTime 代替 Calendar ，
      * DateTimeFormatter 代替 SimpleDateFormat ，
      * 官方给出的解释： simple beautiful strong
      * immutable thread - safe
      */
-    void dateTime(){
+    void dateTime() {
 
     }
 
     /**
      * 使用 JDK8 的 Optional 类来防止 NPE 问题
      */
-   static void testNPE(){
+    static void testNPE() {
         Optional<Integer> optional = Optional.ofNullable(getNpe(3));
 
-            Integer integer = optional.get();
-            System.out.println(integer);
+        Integer integer = optional.get();
+        System.out.println(integer);
 
     }
 
-    static Integer getNpe(int a){
-        if(a==2){
+    static Integer getNpe(int a) {
+        if (a == 2) {
             return null;
         }
-       return 3;
+        return 3;
     }
 }
