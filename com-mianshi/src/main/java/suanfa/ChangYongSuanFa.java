@@ -9,7 +9,9 @@ import java.util.List;
  * @author zhouheng
  * @create 2019-01-22 17:19
  */
-public class ChangYongSuanFa {
+public class
+
+ChangYongSuanFa {
 
     /**
      * 参考网址:https://www.cnblogs.com/10158wsj/p/6782124.html
