@@ -1,10 +1,8 @@
 package javadevelopmentprotocol;
 
-import javafx.scene.input.DataFormat;
-
-import javax.xml.crypto.Data;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -15,15 +13,17 @@ import java.util.Date;
 public class MyHeap {
     public static void main(String[] args) throws InterruptedException {
 
-        while (true){
 
-            Date date = new Date();
-            SimpleDateFormat simpleDateFormat  = new SimpleDateFormat("yyyy-MM:dd HH:mm:ss");
-            String format = simpleDateFormat.format(date);
-            Thread.sleep(2000);
-            System.out.println(String.format("时间:%s测试生成堆栈文件!",format));
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM:dd HH:mm:ss");
+        String format = simpleDateFormat.format(date);
 
-        }
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+        LocalDateTime date1 = LocalDateTime.now();
+        System.out.println(formatter.format(date1));
+        System.out.println(String.format("时间:%s测试生成堆栈文件!", format));
+
 
     }
 }

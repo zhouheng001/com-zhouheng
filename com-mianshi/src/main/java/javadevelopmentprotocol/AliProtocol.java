@@ -43,9 +43,9 @@ public class AliProtocol {
      * 时间规范
      *
      * @Description 如果是 JDK 8 的应用，
-     * 可以使用 Instant 代替 Date ，
-     * LocalDateTime 代替 Calendar ，
-     * DateTimeFormatter 代替 SimpleDateFormat ，
+     * 可以使用 {@link java.time.Instant} 代替 {@link java.util.Date}，
+     * {@link java.time.LocalDateTime} 代替 {@link java.util.Calendar} ，
+     * {@link java.time.format.DateTimeFormatter} 代替 {@link java.text.SimpleDateFormat} ，
      * 官方给出的解释： simple beautiful strong
      * immutable thread - safe
      */
@@ -58,7 +58,6 @@ public class AliProtocol {
      */
     static void testNPE() {
         Optional<Integer> optional = Optional.ofNullable(getNpe(3));
-
         Integer integer = optional.get();
         System.out.println(integer);
 
