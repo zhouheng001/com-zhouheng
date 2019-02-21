@@ -22,35 +22,28 @@ public class PaiXun {
             int i = start;
             int j = end;
 
-            int midNum = num[i];
+            int midNum = num[i]; //标杆位置
 
             while (i < j) {
                 while (i < j) {
                     if (midNum > num[j]) {
                         num[i] = num[j];
-                        i++;
                         break;
-                    } else {
-                        j--;
                     }
+                    j--;
                 }
-
                 while (i < j) {
-                    if (midNum < num[i]) {
+                    if (midNum <= num[i]) {
                         num[j] = num[i];
-                        j--;
                         break;
-                    } else {
-                        i++;
                     }
+                    i++;
                 }
             }
-            num[j] = midNum;
 
-            kuaiPai(num, start, i);
-            kuaiPai(num, j, end);
-
+            num[i]=midNum;
+            kuaiPai(num,i+1,end);
+            kuaiPai(num,start,i-1);
         }
-
     }
 }

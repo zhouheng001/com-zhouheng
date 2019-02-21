@@ -20,6 +20,10 @@ public class Test {
         //递归
         int i1 = diGui(6);
         System.out.println(i1);
+        //
+        c(10);
+        //递归文件
+//        diGuiFile(new File("F:\\英雄时刻"));
 
     }
 
@@ -68,4 +72,15 @@ public class Test {
         }
 
     }
+
+    static void  c(int a){
+        if(a==5){
+            System.out.println(a);
+        }else {
+            a--;
+            c(a);
+        }
+
+    }
+
 }
