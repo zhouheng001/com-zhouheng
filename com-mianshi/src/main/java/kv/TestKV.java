@@ -9,12 +9,18 @@ package kv;
 public class TestKV {
 
     public static void main(String[] args) {
-        String test = test(1, "有值", "输出");
-        System.out.println(test);
-        String test1 = test(1, null, "输出");
-        System.out.println(test1);
-        Integer integer = test1(123);
-        System.out.println(integer);
+//        String test = test(1, "有值", "输出");
+//        System.out.println(test);
+//        String test1 = test(1, null, "输出");
+//        System.out.println(test1);
+//        Integer integer = test1(123);
+//        System.out.println(integer);
+        String a = "123";
+        String c = "456";
+        System.out.println(a+c);
+        System.out.println("123"+"456"=="123456");
+        System.out.println(a+c=="123456");
+
     }
 
     public static  <K, V> V test(int a, K k, V v) {
