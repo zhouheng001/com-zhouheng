@@ -7,6 +7,7 @@ import com.sub.dt.dbRouting.bean.RouterSet;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
  * @Description 根据指定变量动态切 库和表
  * @Autohr supers【weChat:13031016567】
  */
+@Component
 public class DBRouterImpl implements DBRouter {
 
     private static final Logger log = LoggerFactory.getLogger(DBRouterImpl.class);

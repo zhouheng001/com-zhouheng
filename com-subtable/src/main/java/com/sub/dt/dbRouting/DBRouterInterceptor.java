@@ -28,6 +28,7 @@ public class DBRouterInterceptor {
 
     private static final Logger log = LoggerFactory.getLogger(DBRouterInterceptor.class);
 
+    @Autowired
     private DBRouter dBRouter;
 
     @Pointcut("@annotation( com.sub.dt.dbRouting.annotation.Router)")

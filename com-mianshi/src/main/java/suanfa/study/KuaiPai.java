@@ -6,14 +6,16 @@ package suanfa.study;
  * @author zhouheng
  * @create 2019-02-18 下午 10:11
  */
-public class PaiXun {
+public class KuaiPai {
 
     public static void main(String[] args) {
         int[] num = {5, 6, 4, 3, 1, 2, 10, 9, 8};
-        kuaiPai(num, 0, num.length - 1);
-        for (int i : num) {
-            System.out.print(i + " ");
-        }
+//        kuaiPai(num, 0, num.length - 1);
+        insertPai(num);
+//        for (int i : num) {
+//            System.out.print(i + " ");
+//        }
+
     }
 
     //快速排序
@@ -44,6 +46,19 @@ public class PaiXun {
             num[i]=midNum;
             kuaiPai(num,i+1,end);
             kuaiPai(num,start,i-1);
+        }
+    }
+
+    //插入排序
+    static void insertPai(int[] num){
+        for (int i=1;i<num.length;i++){
+             int insertNum = num[i];
+             int j = i-1;
+             while (j>=0 && num[j] < insertNum){
+                 num[j+1] = num[j];
+                 j--;
+             }
+            num[j + 1] = insertNum;
         }
     }
 }
