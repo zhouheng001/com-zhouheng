@@ -11,16 +11,16 @@ import java.util.List;
  */
 public class PropertyValues {
 
-    private List<PropertyValues> propertyValues = new ArrayList<>();
-
     public PropertyValues() {
     }
 
-    public void addPropertyValues(PropertyValues propertyValues) {
-        this.propertyValues.add(propertyValues);
+    private List<PropertyValue> propertyValues = new ArrayList<>();
+
+    public List<PropertyValue> getPropertyValues() {
+        return propertyValues;
     }
 
-    public void setPropertyValues(List<PropertyValues> propertyValues) {
+    public void setPropertyValues(List<PropertyValue> propertyValues) {
         this.propertyValues = propertyValues;
     }
 }
