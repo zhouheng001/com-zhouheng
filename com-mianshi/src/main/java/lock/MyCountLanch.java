@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
  * @create 2019-01-15 18:13
  */
 public class MyCountLanch {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         CountDownLatch countDownLatch = new CountDownLatch(2);
 
@@ -43,6 +43,7 @@ public class MyCountLanch {
         });
 
 
+        System.out.println();
         t1.start();
         t2.start();
 
