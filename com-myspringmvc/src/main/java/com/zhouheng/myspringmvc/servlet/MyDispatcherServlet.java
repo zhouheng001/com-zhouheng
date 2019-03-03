@@ -65,6 +65,11 @@ public class MyDispatcherServlet extends HttpServlet {
 
     }
 
+    @Override
+    public void destroy() {
+        System.out.println("销毁!");
+        super.destroy();
+    }
 
     private void doDispatch(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         if (handlerMapping.isEmpty()) {
