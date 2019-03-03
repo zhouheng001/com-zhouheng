@@ -5,7 +5,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
+import javax.annotation.Resource;
 
 /**
  * @author zhouheng
@@ -26,8 +26,7 @@ public class UserService {
      */
 //    @Qualifier("userDao")
 //    @Autowired(required = false)
-//    @Resource(name = "userDao")
-    @Inject
+    @Resource(name = "userDao1")
     private UserDao userDao1;
 
     public void Test(){

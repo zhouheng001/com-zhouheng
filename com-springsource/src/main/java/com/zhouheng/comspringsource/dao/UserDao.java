@@ -1,8 +1,5 @@
 package com.zhouheng.comspringsource.dao;
 
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
@@ -15,8 +12,8 @@ import java.util.UUID;
 @Repository
 public class UserDao {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+//    @Autowired
+//    private JdbcTemplate jdbcTemplate;
 
    private int lable=1;
 
@@ -38,6 +35,6 @@ public class UserDao {
     public void insert(){
         String sql="INSERT INTO `tbl_user`(username,age) VALUES(?,?)";
         String substring = UUID.randomUUID().toString().substring(0, 5);
-        jdbcTemplate.update(sql,substring,19);
+        System.out.println("执行sql!");
     }
 }
