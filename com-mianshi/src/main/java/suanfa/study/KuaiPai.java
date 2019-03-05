@@ -61,4 +61,21 @@ public class KuaiPai {
             num[j + 1] = insertNum;
         }
     }
+
+    //简单选择排序
+    static void simplePai(int[] num){
+        int length = num.length;
+        for (int i=0;i<length;i++){
+           int value = num[i];
+           int position = i;
+           for(int j=i+1;j<length;j++){
+             if(num[j]<value){
+                 value = num[j];
+                 position = j;
+             }
+           }
+           num[position] = num[i];
+           num[i] = value;
+       }
+    }
 }

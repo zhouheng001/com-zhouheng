@@ -32,7 +32,7 @@ ChangYongSuanFa {
                 j--;
             }
             a[j + 1] = insertNum;//找到位置，插入当前元素
-        }
+    }
     }
 
     /**

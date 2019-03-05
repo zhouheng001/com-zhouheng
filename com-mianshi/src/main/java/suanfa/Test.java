@@ -18,5 +18,6 @@ public class Test {
             System.out.print(i+" ");
         }
 
+        System.out.println( ChangYongSuanFa.class.getName());
     }
 }

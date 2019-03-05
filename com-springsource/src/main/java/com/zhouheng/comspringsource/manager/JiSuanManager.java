@@ -1,5 +1,7 @@
 package com.zhouheng.comspringsource.manager;
 
+import com.zhouheng.comspringsource.annotation.MyAnnotation;
+
 /**
  * @author zhouheng
  * @Description:
@@ -7,6 +9,7 @@ package com.zhouheng.comspringsource.manager;
  */
 public class JiSuanManager {
 
+    @MyAnnotation("jisuan")
     public int calculator(int a, int b) {
         return a / b;
     }

@@ -18,12 +18,13 @@ public class Test {
 //        int i = xunHuan(6);
 //        System.out.println(i);
         //递归
-        int i1 = diGui(6);
-        System.out.println(i1);
+//        int i1 = diGui(6);
+//        System.out.println(i1);
 //
 //        c(10);
         //递归文件
 //        diGuiFile(new File("F:\\英雄时刻"));
+        c1(2,"adc","adgds","sjfjksd");
 
     }
 
@@ -81,5 +82,13 @@ public class Test {
         }
 
     }
+
+    static void c1(int a, String ...str){
+        for (String s : str) {
+            System.out.println(s);
+        }
+    }
+
+
 
 }

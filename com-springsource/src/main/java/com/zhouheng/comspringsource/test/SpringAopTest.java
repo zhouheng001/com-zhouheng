@@ -15,6 +15,6 @@ public class SpringAopTest {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfigAop.class);
         JiSuanManager bean = applicationContext.getBean(JiSuanManager.class);
-        System.out.println(bean.calculator(1,1));
+        System.out.println("输出结果:"+bean.calculator(1,0));
     }
 }

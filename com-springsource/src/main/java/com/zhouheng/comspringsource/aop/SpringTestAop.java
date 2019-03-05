@@ -1,6 +1,8 @@
 package com.zhouheng.comspringsource.aop;
 
+import com.sun.org.apache.xpath.internal.operations.String;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 
@@ -24,7 +26,9 @@ public class SpringTestAop {
     private static final Logger logger = Logger.getLogger(SpringTestAop.class.getName());
 
     //@Pointcut(value = "execution(public int com.zhouheng.comspringsource.manager.JiSuanManager.calculator(int,int))")  切点是指定方法
-    @Pointcut(value = "execution(public int com.zhouheng.comspringsource.manager.JiSuanManager.*(..))")
+    //@Pointcut(value = "execution(public int com.zhouheng.comspringsource.manager..*.*(..))")
+//      @Pointcut(value = "execution(public int com.zhouheng.comspringsource.manager.JiSuanManager.*(..))")
+      @Pointcut(value = "@annotation(com.zhouheng.comspringsource.annotation.MyAnnotation)")
     //切点是该类下的所有返回值是int的方法
     public void pointcut() {
 
@@ -47,7 +51,7 @@ public class SpringTestAop {
         Object[] args = joinPoint.getArgs();
         List<String> strings = new ArrayList<>();
         for (Object arg : args) {
-            strings.add(String.valueOf(arg));
+            strings.add((String) arg);
         }
         logger.info("args={}"+strings);
 
@@ -67,6 +71,21 @@ public class SpringTestAop {
     @AfterThrowing(value = "pointcut()", throwing = "exception")
     public void afterThrowing(JoinPoint joinPoint, Exception exception) {
         System.out.println("目标方法方法执行异常执行，执行方法名称：" + joinPoint.getSignature().getName() + "返回的异常信息是：" + exception);
+    }
+
+    @Around(value = "pointcut()")
+    public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+
+        System.out.println("环切方法执行前切");
+        Object proceed = null;
+        try {
+             proceed = proceedingJoinPoint.proceed();
+        }catch (Exception e){
+            proceed = -1;
+            System.out.println("异常信息!");
+        }
+        return proceed;
+
     }
 
 }
