@@ -11,4 +11,19 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     private static final long serialVersionUID = -5568657781708470125L;
+
+    private int a;
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+        System.out.println(this.a);
+    }
 }

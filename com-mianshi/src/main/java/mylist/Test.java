@@ -9,7 +9,7 @@ package mylist;
 public class Test {
     /**
      * @param args
-     * @see MyList
+     * @see MyList#getNode()
      */
     public static void main(String[] args) {
         MyList<String> myList = new MyList();
