@@ -1,8 +1,8 @@
 package com.zhouheng.comspringsource.controller;
 
-import org.springframework.stereotype.Controller;
+import com.zhouheng.comspringsource.pc.WebResponse;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.Callable;
 
@@ -11,10 +11,9 @@ import java.util.concurrent.Callable;
  * @Description:
  * @create 2019-01-24 14:54
  */
-@Controller
+@RestController
 public class TestController {
 
-    @ResponseBody
     @RequestMapping("/async01")
     public Callable<String> async01(){
         System.out.println("主线程开始..."+Thread.currentThread()+"==>"+System.currentTimeMillis());
@@ -31,5 +30,10 @@ public class TestController {
 
         System.out.println("主线程结束..."+Thread.currentThread()+"==>"+System.currentTimeMillis());
         return callable;
+    }
+
+    @RequestMapping("/test")
+    public WebResponse<String> getTest(){
+        return WebResponse.returnfail("服务器繁忙!");
     }
 }

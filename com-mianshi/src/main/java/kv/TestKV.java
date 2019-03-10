@@ -32,12 +32,14 @@ public class TestKV {
 //                method.invoke(user, 3);
 //        }
 
-        StringBuilder a= new StringBuilder("123");
-        StringBuilder b = a;
-        b.append("ad");
-        System.out.println(a);
-        String c = new String("123");
-        System.out.println("123" == c);
+//        StringBuilder a= new StringBuilder("123");
+//        StringBuilder b = a;
+//        b.append("ad");
+//        System.out.println(a);
+//        String c = new String("123");
+//        System.out.println("123" == c);
+
+
     }
 
     public static <K, V> V test(int a, K k, V v) {

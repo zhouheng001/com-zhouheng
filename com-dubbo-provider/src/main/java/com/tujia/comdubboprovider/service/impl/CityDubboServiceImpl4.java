@@ -6,7 +6,7 @@ import com.tujia.comdubboapi.domain.City;
 import com.tujia.comdubboapi.service.CityDubboService;
 
 // 注册为 Dubbo 服务
-@Service(group = "CityDubboService4")
+@Service(group = "CityDubboService4",protocol = "rmi")
 public class CityDubboServiceImpl4 implements CityDubboService {
 
     public City findCityByName(String cityName) {
