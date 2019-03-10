@@ -1,6 +1,7 @@
 package kv;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Properties;
 
 /**
  * 描述:
@@ -39,6 +40,9 @@ public class TestKV {
 //        String c = new String("123");
 //        System.out.println("123" == c);
 
+        String property = System.getProperty("java.version");
+        Properties properties = System.getProperties();
+        System.out.println(property);
 
     }
 
