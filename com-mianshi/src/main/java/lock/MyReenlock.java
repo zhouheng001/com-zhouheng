@@ -1,7 +1,5 @@
 package lock;
 
-import sun.awt.windows.ThemeReader;
-
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -11,20 +9,20 @@ import java.util.concurrent.locks.ReentrantLock;
  * @create 2019-01-15 18:46
  */
 public class MyReenlock {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ReentrantLock reentrantLock = new ReentrantLock();
 
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                boolean locked = reentrantLock.isLocked();
+                reentrantLock.lock();
                 System.out.println("获取锁");
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
+                reentrantLock.unlock();
                 System.out.println("释放锁");
             }
         });
@@ -38,6 +36,7 @@ public class MyReenlock {
         });
 
         t1.start();
+        Thread.sleep(3000);
         t2.start();
     }
 }

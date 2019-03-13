@@ -14,8 +14,27 @@ public class Test {
 //        Callable<String> callable = callable("123");
 //        String call = callable.call();
 //        System.out.println(call);
-        MyCallable<String> myCallable = new MyCallable<>();
-        myCallable.call();
+//        MyCallable<String> myCallable = new MyCallable<>();
+//        myCallable.call();
+        MyLock myLock = new MyLock();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                myLock.lock();
+                System.out.println(1);
+            }
+        });
+
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                myLock.lock();
+                System.out.println(2);
+            }
+        });
+
+        thread.start();
+        thread1.start();
 
     }
 

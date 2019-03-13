@@ -28,4 +28,28 @@ public class City implements Serializable {
 
         this.xian = xian;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof City)) return false;
+        if (!super.equals(o)) return false;
+
+        City city = (City) o;
+
+        if (Id != city.Id) return false;
+        if (proviceId != city.proviceId) return false;
+        if (!qu.equals(city.qu)) return false;
+        return xian.equals(city.xian);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (int) (Id ^ (Id >>> 32));
+        result = 31 * result + (int) (proviceId ^ (proviceId >>> 32));
+        result = 31 * result + qu.hashCode();
+        result = 31 * result + xian.hashCode();
+        return result;
+    }
 }
