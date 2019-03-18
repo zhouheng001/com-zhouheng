@@ -45,7 +45,7 @@ public class City implements Serializable {
 
     @Override
     public int hashCode() {
-        int result = super.hashCode();
+        int result = 17;
         result = 31 * result + (int) (Id ^ (Id >>> 32));
         result = 31 * result + (int) (proviceId ^ (proviceId >>> 32));
         result = 31 * result + qu.hashCode();

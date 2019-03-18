@@ -1,7 +1,5 @@
 package lock;
 
-import java.util.concurrent.locks.ReentrantLock;
-
 /**
  * 描述:
  *
@@ -12,7 +10,6 @@ public class ThreadTest {
 
     public static void main(String[] args) throws InterruptedException {
 
-        ReentrantLock reentrantLock = new ReentrantLock();
 
         Object o = new Object();
 
@@ -23,7 +20,7 @@ public class ThreadTest {
                   synchronized (o){
                       System.out.println(1);
                       try {
-                          o.notifyAll();
+                          o.notify();
                           o.wait();
                       } catch (InterruptedException e) {
                           e.printStackTrace();
@@ -40,7 +37,7 @@ public class ThreadTest {
                     synchronized (o){
                         System.out.println("a");
                         try {
-                            o.notifyAll();
+                            o.notify();
                             o.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();

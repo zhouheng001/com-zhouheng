@@ -1,7 +1,11 @@
 package kv;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Properties;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 描述:
@@ -40,9 +44,30 @@ public class TestKV {
 //        String c = new String("123");
 //        System.out.println("123" == c);
 
-        String property = System.getProperty("java.version");
-        Properties properties = System.getProperties();
-        System.out.println(property);
+//        String property = System.getProperty("java.version");
+//        Properties properties = System.getProperties();
+//        System.out.println(property);
+
+//        int Id =2;
+//        int i = Id ^ (Id >>> 2);
+//        System.out.println(i);
+//        System.out.println(2^3);
+//        System.out.println(4>>>32);
+
+        Hashtable<String,String> map = new Hashtable<>();
+        String put = map.put("a", "fadsa");
+        map.put("b","123");
+        map.put("c","dasd");
+        String put1 = map.put("a", "fsdfadfsfa");
+        System.out.println(put);
+        System.out.println(put1);
+        System.out.println(map.get("a"));
+        HashMap hashMap = new HashMap(4);
+        hashMap.put(null,null);
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+        concurrentHashMap.put("","");
+
+        Map<String, String> stringStringMap = Collections.synchronizedMap(map);
 
     }
 

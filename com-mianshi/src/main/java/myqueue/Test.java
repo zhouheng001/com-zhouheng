@@ -1,8 +1,5 @@
 package myqueue;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 /**
  * 描述:
  *
@@ -10,34 +7,58 @@ import java.util.concurrent.Executors;
  * @create 2019-01-15 14:33
  */
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-//        MyQueue myQueue = new MyQueue(5);
-//        Object o = myQueue.removeQueue();
-
-        Object o = new Object();
-        o.notify();
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
-
-        executorService.submit(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+        MyQueue myQueue = new MyQueue(5);
+        for (int i = 0; i < 10; i++) {
+            int finalI = i;
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    myQueue.addQueue(finalI);
                 }
-            }
-        });
-
-        executorService.shutdown();
-
-        while (true){
-            if(executorService.isTerminated()){
-                System.out.println("执行结束!");
-                break;
-            }
+            }).start();
         }
+        System.out.println(myQueue.getSize());
+        Thread.sleep(3000);
+
+
+
+        for (int i = 0; i < 10; i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Object o = myQueue.removeQueue();
+                    System.out.println(o);
+                }
+            }).start();
+        }
+
+
+
+//        Object o = new Object();
+//        o.notify();
+//        ExecutorService executorService = Executors.newFixedThreadPool(3);
+//
+//        executorService.submit(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(3000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+//
+//        executorService.shutdown();
+//
+//        while (true){
+//            if(executorService.isTerminated()){
+//                System.out.println("执行结束!");
+//                break;
+//            }
+//        }
 
     }
 }
