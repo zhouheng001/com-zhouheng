@@ -49,14 +49,14 @@ public class DubboController {
         tUser0000.setUserNum(tel);
         tUser0000.setPassword("123456");
         tUser0000.setUserName("周恒");
-        dubboPresentation.insert(tUser0000);
-        return "success";
+        int insert = dubboPresentation.insert(tUser0000);
+        return String.valueOf(insert);
     }
 
     @RequestMapping(value = "/del/{id}",method = RequestMethod.GET)
     public String del(@PathVariable Integer id){
-        dubboPresentation.deleteByPrimaryKey(id);
-        return "success";
+        int i = dubboPresentation.deleteByPrimaryKey(id);
+        return String.valueOf(i);
     }
 
     @RequestMapping(value = "/select/{id}",method = RequestMethod.GET)

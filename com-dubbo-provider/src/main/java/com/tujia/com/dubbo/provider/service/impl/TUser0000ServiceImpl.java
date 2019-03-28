@@ -6,6 +6,8 @@ import com.tujia.com.dubbo.api.po.TUser0000Example;
 import com.tujia.comdubboapi.dao.TUser0000Dao;
 import com.tujia.comdubboapi.service.TUser0000Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,9 +23,12 @@ public class TUser0000ServiceImpl implements TUser0000Service {
     @Autowired
     private TUser0000Dao tUser0000Dao;
 
+    @Transactional(propagation= Propagation.REQUIRED,readOnly = false)
     @Override
     public int deleteByPrimaryKey(Integer id) {
-        return tUser0000Dao.deleteByPrimaryKey(id);
+        int i = tUser0000Dao.deleteByPrimaryKey(id);
+        int i1 = 10 / 0;
+        return i;
     }
 
     @Override
