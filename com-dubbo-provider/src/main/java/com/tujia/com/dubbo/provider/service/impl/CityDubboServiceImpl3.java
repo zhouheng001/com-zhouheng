@@ -1,4 +1,4 @@
-package com.tujia.comdubboprovider.service.impl;
+package com.tujia.com.dubbo.provider.service.impl;
 
 
 import com.alibaba.dubbo.config.annotation.Service;

@@ -13,7 +13,7 @@ public class HeYinLiao {
         int i = heYinLiao(10);
         System.out.println(i);
 
-        String s = "sdjfkasdjf";
+        String s = "asdjfksdjf";
         char getfirst = getfirst(s);
         System.out.println(getfirst);
     }

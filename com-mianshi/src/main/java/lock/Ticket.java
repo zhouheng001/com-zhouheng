@@ -36,5 +36,6 @@ public class Ticket {
             thread.start();
             thread1.start();
         }
+        System.out.println("123");
     }
 }

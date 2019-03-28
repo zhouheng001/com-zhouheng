@@ -1,6 +1,8 @@
 package suanfa.study;
 
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 描述:
@@ -24,8 +26,9 @@ public class Test {
 //        c(10);
         //递归文件
 //        diGuiFile(new File("F:\\英雄时刻"));
-        c1(2,"adc","adgds","sjfjksd");
+//        c1(2,"adc","adgds","sjfjksd");
 
+        Set set = new HashSet();
     }
 
 

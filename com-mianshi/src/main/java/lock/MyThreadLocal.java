@@ -13,7 +13,10 @@ public class MyThreadLocal {
     public static void main(String[] args) {
 
         ThreadLocal threadLocal = new ThreadLocal(){
-
+            @Override
+            protected Object initialValue() {
+                return super.initialValue();
+            }
         };
 
         Person person = new Person(){

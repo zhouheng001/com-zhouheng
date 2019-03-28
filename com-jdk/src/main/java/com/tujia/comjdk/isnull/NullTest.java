@@ -21,7 +21,6 @@ public class NullTest implements ITest {
     public void main1(String[] args) {
         long l = System.currentTimeMillis();
         System.out.println(l);
-
     }
 
     public void main2(String[] args) {

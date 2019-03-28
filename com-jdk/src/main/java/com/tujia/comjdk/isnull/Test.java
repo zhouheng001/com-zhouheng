@@ -1,5 +1,8 @@
 package com.tujia.comjdk.isnull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 描述:
  *
@@ -8,7 +11,11 @@ package com.tujia.comjdk.isnull;
  */
 public class Test implements ITest {
     public static void main(String[] args) {
-        new Test().main1(null);
+//        new Test().main1(null);
+        List list = new ArrayList();
+        for (int i = 0; i < 1000000000 ; i++) {
+              list.add("dlkajflkdsjflkasdfj坚实的解放军安抚");
+        }
     }
 
     @Override

@@ -1,6 +1,8 @@
 package lock;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 描述:
@@ -16,12 +18,15 @@ public class Test {
 //        System.out.println(call);
 //        MyCallable<String> myCallable = new MyCallable<>();
 //        myCallable.call();
-        MyLock myLock = new MyLock();
+        Lock myLock = new ReentrantLock();
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                myLock.lock();
-                System.out.println(1);
+                while (true){
+                    myLock.lock();
+                    System.out.println(1);
+                    myLock.unlock();
+                }
             }
         });
 
