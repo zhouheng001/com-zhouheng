@@ -31,6 +31,7 @@
         <module>com-servlet3</module>
         <module>com-subtable</module>
         <module>com-springmvcandservlet3</module>
+        <module>com-mybatis-generator</module>
         <module>com-mybatis-plus</module>
     </modules>
 
