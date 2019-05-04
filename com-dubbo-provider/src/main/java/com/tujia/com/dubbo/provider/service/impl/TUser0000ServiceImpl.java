@@ -6,7 +6,6 @@ import com.tujia.com.dubbo.api.po.TUser0000Example;
 import com.tujia.comdubboapi.dao.TUser0000Dao;
 import com.tujia.comdubboapi.service.TUser0000Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -17,13 +16,14 @@ import java.util.List;
  * @author zhouheng
  * @create 2019-03-28 下午 3:22
  */
-@Service(version = "1.0.0",group = "TUser0000Service",timeout = 2000,protocol = "dubbo")
+@Service(version = "1.0.0", group = "TUser0000Service", timeout = 5000,protocol = "dubbo")
 public class TUser0000ServiceImpl implements TUser0000Service {
 
     @Autowired
     private TUser0000Dao tUser0000Dao;
 
-    @Transactional(propagation= Propagation.REQUIRED,readOnly = false)
+
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public int deleteByPrimaryKey(Integer id) {
         int i = tUser0000Dao.deleteByPrimaryKey(id);

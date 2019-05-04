@@ -1,5 +1,7 @@
 package myqueue;
 
+import java.util.concurrent.*;
+
 /**
  * 描述:
  *
@@ -59,6 +61,9 @@ public class Test {
 //                break;
 //            }
 //        }
+
+
+        ExecutorService executorService = new ThreadPoolExecutor(5,10,30 , TimeUnit.SECONDS,new ArrayBlockingQueue<>(10),Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
 
     }
 }
