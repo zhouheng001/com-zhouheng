@@ -29,7 +29,15 @@ public class Test {
 
         /** 输出二叉树的第n层所有节点*/
 
-        getCengNode(node, 3);
+//        getCengNode(node, 3);
+
+        int ceng = getCeng(node);
+
+        for (int i=1;i<=ceng;i++){
+            getCengNode(node,i);
+            System.out.println();
+        }
+
 
     }
 
@@ -39,7 +47,7 @@ public class Test {
         }
 
         if (n == 1) {
-            System.out.println(myTree.getValue());
+            System.out.print(myTree.getValue()+" ");
             return;
         }
 
@@ -50,4 +58,14 @@ public class Test {
 
 
     }
+
+    public static int getCeng(MyTree myTree) {
+        if (myTree == null) return 0;
+
+        int leftNode = getCeng(myTree.getLeftMode());
+        int reghtNode = getCeng(myTree.getRightMode());
+
+        return Math.max(leftNode, reghtNode) + 1;
+    }
+
 }
