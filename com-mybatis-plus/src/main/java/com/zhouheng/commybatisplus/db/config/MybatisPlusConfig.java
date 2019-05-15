@@ -71,6 +71,7 @@ public class MybatisPlusConfig {
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         HashMap<Object, Object> hashMap = new HashMap();
         hashMap.put(DatasourceEnum.DATA_SOURCE_ZHOUHENG, dataSourceGuns);
+
         dynamicDataSource.setTargetDataSources(hashMap);
         dynamicDataSource.setDefaultTargetDataSource(dataSourceGuns);
         return dynamicDataSource;
