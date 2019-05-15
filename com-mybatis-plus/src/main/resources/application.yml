@@ -1,4 +1,9 @@
 
+spring:
+  profiles:
+    active: @spring.active@
+#    active: dev
+
 mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml
 #  type-aliases-package: com.zhouheng.commybatisplus.model
@@ -12,9 +17,4 @@ mybatis-plus:
     jdbc-type-for-null: null
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://47.93.4.127:3306/zhouheng?characterEncoding=utf8&characterSetResults=utf8&autoReconnect=true&failOverReadOnly=false
-    username: root
-    password: 123456
+

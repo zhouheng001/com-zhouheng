@@ -1,0 +1,18 @@
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.93.4.127:3306/zhouheng?characterEncoding=utf8&characterSetResults=utf8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: 1234567
+
+zhouheng:
+  muti-datasource-open : true
+  muti-baokao-datasource:
+    default-dataSource-name: dataSourceZhouheng #默认的数据源名称
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.93.4.127:3306/zhouheng?characterEncoding=utf8&characterSetResults=utf8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: 123456
+

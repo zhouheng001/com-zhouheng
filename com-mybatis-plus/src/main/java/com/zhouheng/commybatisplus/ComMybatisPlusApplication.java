@@ -1,15 +1,15 @@
 package com.zhouheng.commybatisplus;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
-@MapperScan("com.zhouheng.commybatisplus.dao")
+@EnableAspectJAutoProxy
 public class ComMybatisPlusApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ComMybatisPlusApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ComMybatisPlusApplication.class, args);
+    }
 
 }

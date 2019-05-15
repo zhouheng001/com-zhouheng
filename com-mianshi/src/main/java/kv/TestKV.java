@@ -1,11 +1,11 @@
 package kv;
 
+import kv.hash.MyHashTable;
+
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 /**
  * 描述:
@@ -53,21 +53,31 @@ public class TestKV {
 //        System.out.println(i);
 //        System.out.println(2^3);
 //        System.out.println(4>>>32);
+//
+//        Hashtable<String,String> map = new Hashtable<>();
+//        String put = map.put("a", "fadsa");
+//        map.put("b","123");
+//        map.put("c","dasd");
+//        String put1 = map.put("a", "fsdfadfsfa");
+//        System.out.println(put);
+//        System.out.println(put1);
+//        System.out.println(map.get("a"));
+//        HashMap hashMap = new HashMap(4);
+//        hashMap.put(null,null);
+//        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+//        concurrentHashMap.put("","");
+//
+//        Map<String, String> stringStringMap = Collections.synchronizedMap(map);
 
-        Hashtable<String,String> map = new Hashtable<>();
-        String put = map.put("a", "fadsa");
-        map.put("b","123");
-        map.put("c","dasd");
-        String put1 = map.put("a", "fsdfadfsfa");
-        System.out.println(put);
-        System.out.println(put1);
-        System.out.println(map.get("a"));
-        HashMap hashMap = new HashMap(4);
-        hashMap.put(null,null);
-        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-        concurrentHashMap.put("","");
+        Hashtable hashTable = new MyHashTable();
+        hashTable.put("1","zhouheng");
+        System.out.println("put1成功!");
+        Object o = hashTable.get("1");
+        System.out.println(o);
+        hashTable.put("2","zhouheng");
+        System.out.println("put2成功!");
 
-        Map<String, String> stringStringMap = Collections.synchronizedMap(map);
+        BlockingQueue blockingDeque = new ArrayBlockingQueue(10);
 
     }
 
