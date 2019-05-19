@@ -2,10 +2,10 @@ package com.zhouheng.commybatisplus.service.impl;
 
 import com.zhouheng.commybatisplus.common.DatasourceEnum;
 import com.zhouheng.commybatisplus.dao.UserDao;
+import com.zhouheng.commybatisplus.db.Db;
 import com.zhouheng.commybatisplus.db.annotation.DataSource;
 import com.zhouheng.commybatisplus.model.TUser0000;
 import com.zhouheng.commybatisplus.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,8 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserDao userDao;
+
+    private UserDao userDao = Db.getMapper(UserDao.class);
 
 
     @Override
