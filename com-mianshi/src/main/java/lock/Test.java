@@ -1,6 +1,7 @@
 package lock;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -18,23 +19,38 @@ public class Test {
 //        System.out.println(call);
 //        MyCallable<String> myCallable = new MyCallable<>();
 //        myCallable.call();
+//        ArrayBlockingQueue
         Lock myLock = new ReentrantLock();
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true){
-                    myLock.lock();
+        Condition condition1 = myLock.newCondition();
+        Condition condition2 = myLock.newCondition();
+
+        Thread thread = new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                myLock.lock();
+                try {
+                    condition2.signal();
                     System.out.println(1);
+                    condition1.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
                     myLock.unlock();
                 }
             }
         });
 
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
+        Thread thread1 = new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
                 myLock.lock();
-                System.out.println(2);
+                try {
+                    condition1.signal();
+                    System.out.println(2);
+                    condition2.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    myLock.unlock();
+                }
             }
         });
 
@@ -55,12 +71,12 @@ public class Test {
         return callable;
     }
 
-    public static class MyCallable<V> implements Callable<V>{
+    public static class MyCallable<V> implements Callable<V> {
 
         private String name;
 
-        public MyCallable(){
-            this.name="123";
+        public MyCallable() {
+            this.name = "123";
         }
 
         @Override

@@ -19,4 +19,6 @@ public class MobileVo {
 
     private Date date;
 
+    private boolean isSuccess;
+
 }

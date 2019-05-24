@@ -1,7 +1,6 @@
 package com.tujia.comjdk.collection;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * 描述:
@@ -27,19 +26,10 @@ public class MyCollections {
 
         println(list);
 
-        Map<Object, List<String>> collect = list.stream().collect(Collectors.groupingBy(l -> l));
-
-
     }
 
     public static void println(List<String> list) {
-        HashMap hashMap = new HashMap<String,Integer>();
-        TreeMap treeMap = new TreeMap<Integer,String>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2.compareTo(o1);
-            }
-        });
+        HashMap hashMap = new HashMap<String, Integer>();
 
         for (Object o : list) {
             if (hashMap.get(o) != null) {
@@ -49,15 +39,35 @@ public class MyCollections {
             hashMap.put(o, 1);
         }
 
-        for (Object o : hashMap.keySet()) {
-            treeMap.put(hashMap.get(o),o);
+        HashMap hashMap1 = hashMapSort(hashMap);
+        for (Object o : hashMap1.keySet()) {
+            System.out.println(o + ":" + hashMap1.get(o));
         }
 
-        for (Object o : treeMap.keySet()) {
-            System.out.println(treeMap.get(o)+":"+o);
+    }
+
+    public static HashMap<String, Integer> hashMapSort(HashMap<String, Integer> map) {
+        List<Map.Entry<String, Integer>> keyList = new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
+        Collections.sort(keyList, new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1,
+                               Map.Entry<String, Integer> o2) {
+                if (o2.getValue().compareTo(o1.getValue()) > 0) {
+                    return 1;
+                } else if (o2.getValue().compareTo(o1.getValue()) < 0) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        });
+
+        //3、将LinkedList按照排序好的结果，存入到HashMap中
+        HashMap<String, Integer> result = new LinkedHashMap<>();
+        for (Map.Entry<String, Integer> entry : keyList) {
+            result.put(entry.getKey(), entry.getValue());
         }
-
-
+        return result;
     }
 
 }

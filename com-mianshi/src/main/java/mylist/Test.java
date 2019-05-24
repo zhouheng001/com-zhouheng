@@ -17,13 +17,13 @@ public class Test {
         myList.add("34");
         myList.add("45");
 
-        System.out.println(myList);
+//        System.out.println(myList);
 
-        MyList<String>.Node node = myList.getNode();
-        while (node != null) {
-            System.out.println(node.getData());
-            node = node.getN();
-        }
+//        MyList<String>.Node node = myList.getNode();
+//        while (node != null) {
+//            System.out.println(node.getData());
+//            node = node.getN();
+//        }
 
         /** 反转 */
         reverse(myList);
