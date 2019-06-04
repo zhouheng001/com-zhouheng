@@ -48,19 +48,14 @@ public class MyCollections {
 
     public static HashMap<String, Integer> hashMapSort(HashMap<String, Integer> map) {
         List<Map.Entry<String, Integer>> keyList = new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
+
         Collections.sort(keyList, new Comparator<Map.Entry<String, Integer>>() {
             @Override
-            public int compare(Map.Entry<String, Integer> o1,
-                               Map.Entry<String, Integer> o2) {
-                if (o2.getValue().compareTo(o1.getValue()) > 0) {
-                    return 1;
-                } else if (o2.getValue().compareTo(o1.getValue()) < 0) {
-                    return -1;
-                } else {
-                    return 0;
-                }
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                return o2.getValue()-o1.getValue();
             }
         });
+
 
         //3、将LinkedList按照排序好的结果，存入到HashMap中
         HashMap<String, Integer> result = new LinkedHashMap<>();

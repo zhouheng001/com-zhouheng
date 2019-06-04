@@ -63,8 +63,10 @@ public class MyQueue {
                 wait();
             }
 
+            Object remove = list.remove();
+
             /** 当队列大小小于最大尺寸是,唤醒所有添加线程 */
-            if (list.size() < 10) {
+            if (list.size() < this.size) {
                 notifyAll();
             }
 

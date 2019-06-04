@@ -1,7 +1,5 @@
 package myqueue;
 
-import java.util.concurrent.*;
-
 /**
  * 描述:
  *
@@ -22,8 +20,8 @@ public class Test {
             }).start();
         }
         System.out.println(myQueue.getSize());
-        Thread.sleep(3000);
-
+//        Thread.sleep(3000);
+        System.out.println("!----------------");
 
 
         for (int i = 0; i < 10; i++) {
@@ -61,9 +59,10 @@ public class Test {
 //                break;
 //            }
 //        }
-
-
-        ExecutorService executorService = new ThreadPoolExecutor(5,10,30 , TimeUnit.SECONDS,new ArrayBlockingQueue<>(10),Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
+//
+//        BlockingQueue a = new ArrayBlockingQueue<>(10);
+//
+//        ExecutorService executorService = new ThreadPoolExecutor(5,10,30 , TimeUnit.SECONDS,new ArrayBlockingQueue<>(10),Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
 
     }
 }

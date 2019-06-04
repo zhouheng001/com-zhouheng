@@ -11,5 +11,12 @@
         <result column="age" jdbcType="INTEGER" property="age" />
     </resultMap>
 
+    <!-- 批量增加 -->
+    <insert id="insertList" parameterType="list">
+        INSERT into t_user_0000 (user_num, user_name, password, age) VALUES
+        <foreach collection="list" item="test" separator=",">
+            (#{test.userNum},#{test.userName},#{test.password},#{test.age})
+        </foreach>
+    </insert>
 
 </mapper>

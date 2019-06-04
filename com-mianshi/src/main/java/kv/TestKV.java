@@ -1,11 +1,6 @@
 package kv;
 
-import kv.hash.MyHashTable;
-
 import java.lang.reflect.InvocationTargetException;
-import java.util.Hashtable;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
 
 /**
  * 描述:
@@ -66,18 +61,21 @@ public class TestKV {
 //        hashMap.put(null,null);
 //        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
 //        concurrentHashMap.put("","");
+        Integer integer = new Integer(3);
+        Integer integer1 = new Integer(3);
+        System.out.println(integer==integer1);
 //
 //        Map<String, String> stringStringMap = Collections.synchronizedMap(map);
 
-        Hashtable hashTable = new MyHashTable();
-        hashTable.put("1","zhouheng");
-        System.out.println("put1成功!");
-        Object o = hashTable.get("1");
-        System.out.println(o);
-        hashTable.put("2","zhouheng");
-        System.out.println("put2成功!");
-
-        BlockingQueue blockingDeque = new ArrayBlockingQueue(10);
+//        Hashtable hashTable = new MyHashTable();
+//        hashTable.put("1","zhouheng");
+//        System.out.println("put1成功!");
+//        Object o = hashTable.get("1");
+//        System.out.println(o);
+//        hashTable.put("2","zhouheng");
+//        System.out.println("put2成功!");
+//
+//        BlockingQueue blockingDeque = new ArrayBlockingQueue(10);
 
     }
 
