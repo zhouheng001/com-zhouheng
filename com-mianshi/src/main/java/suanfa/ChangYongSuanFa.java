@@ -32,7 +32,7 @@ ChangYongSuanFa {
                 j--;
             }
             a[j + 1] = insertNum;//找到位置，插入当前元素
-    }
+        }
     }
 
     /**
@@ -275,6 +275,31 @@ ChangYongSuanFa {
                 }
             }
         }
+    }
+
+    /**
+     * 二分查找算法
+     *
+     * @param nums
+     * @param start
+     * @param end
+     * @param num
+     * @return
+     */
+    public int binarySearch(int[] nums, int start, int end, int num) throws Exception {
+        if (start > end) {
+            return -1;
+        }
+
+        int mid = (start + end) / 2;
+        if (nums[mid] == num) return mid;
+
+        if (nums[mid] < num) {
+            return binarySearch(nums, mid + 1, end, num);
+        } else {
+            return binarySearch(nums, start, mid - 1, num);
+        }
+
     }
 
 

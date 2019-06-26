@@ -1,5 +1,7 @@
 package tree;
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
  * 描述:
  *
@@ -32,11 +34,12 @@ public class Test {
 //        getCengNode(node, 3);
 
         int ceng = getCeng(node);
+        System.out.println(ceng);
 
-        for (int i=1;i<=ceng;i++){
-            getCengNode(node,i);
-            System.out.println();
-        }
+//        for (int i=1;i<=ceng;i++){
+//            getCengNode(node,i);
+//            System.out.println();
+//        }
 
 
     }
@@ -47,7 +50,7 @@ public class Test {
         }
 
         if (n == 1) {
-            System.out.print(myTree.getValue()+" ");
+            System.out.print(myTree.getValue() + " ");
             return;
         }
 
@@ -62,10 +65,27 @@ public class Test {
     public static int getCeng(MyTree myTree) {
         if (myTree == null) return 0;
 
-        int leftNode = getCeng(myTree.getLeftMode());
-        int reghtNode = getCeng(myTree.getRightMode());
-
-        return Math.max(leftNode, reghtNode) + 1;
+        return Math.max(getCeng(myTree.getLeftMode()), getCeng(myTree.getRightMode())) + 1;
     }
 
+
+    public static int getCeng1(MyTree myTree) {
+        if (myTree == null) return 0;
+
+        int ceng1 = getCeng1(myTree.getLeftMode());
+        int ceng11 = getCeng1(myTree.getRightMode());
+
+        return (ceng1>ceng11?ceng1:ceng11) +1;
+    }
+
+
+    @org.junit.Test
+    public void test() {
+        Object o = new Object();
+        String s = String.valueOf(o);
+        System.out.println(s);
+        System.out.println(Integer.toHexString(o.hashCode()));
+        String string = JSONObject.toJSONString(o);
+        System.out.println(string);
+    }
 }

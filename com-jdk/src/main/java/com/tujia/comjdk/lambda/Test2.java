@@ -1,6 +1,11 @@
 package com.tujia.comjdk.lambda;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 import java.util.function.DoubleSupplier;
+import java.util.function.Function;
+import java.util.function.IntBinaryOperator;
 
 /**
  * 描述:
@@ -32,6 +37,20 @@ public class Test2 {
         };
         double asDouble = doubleSupplier.getAsDouble();
         System.out.println(asDouble);
+
+        IntBinaryOperator intBinaryOperator = (int g, int f) -> {
+            return g + f;
+        };
+
+        int i = intBinaryOperator.applyAsInt(10, 20);
+        System.out.println(i);
+
+        Function<HashMap, Object> hashMapObjectFunction = (HashMap hashmap) -> {
+            return hashmap.entrySet();
+        };
+
+        HashMap hashMap = new HashMap();
+        Set<Map.Entry> set = hashMap.entrySet();
 
     }
 }

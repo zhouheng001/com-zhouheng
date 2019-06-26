@@ -1,5 +1,9 @@
 package suanfa;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 /**
  * @author zhouheng
  * @Description:
@@ -7,7 +11,9 @@ package suanfa;
  */
 public class Test {
 
-    public static void main(String[] args) {
+   private static ArrayList<Integer> list = new ArrayList<>();
+
+    public static void main(String[] args) throws Exception {
 
         ChangYongSuanFa changYongSuanFa = new ChangYongSuanFa();
         int [] num = new int[]{1,6,4,3,5,2,10,9,8};
@@ -17,7 +23,28 @@ public class Test {
         for (int i : num) {
             System.out.print(i+" ");
         }
+        System.out.println();
 
-        System.out.println( ChangYongSuanFa.class.getName());
+        int i = changYongSuanFa.binarySearch(num, 0, num.length - 1, 3);
+        System.out.println("位置:"+(i+1));
+//
+//        System.out.println( ChangYongSuanFa.class.getName());
+
+//        get(1);
+//        get(3);
+//        get(3);
+//        get(2);
+//        System.out.println(list);
+    }
+
+    public static List<Integer> get(int a){
+        list.add(a);
+        list.sort(new Comparator<Integer>() {
+           @Override
+           public int compare(Integer o1, Integer o2) {
+               return o1.intValue()-o2.intValue();
+           }
+        });
+        return list;
     }
 }
