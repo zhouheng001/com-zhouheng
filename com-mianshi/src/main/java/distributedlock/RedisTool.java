@@ -1,6 +1,5 @@
 package distributedlock;
 
-import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
@@ -57,10 +56,14 @@ public class RedisTool {
 
     @Test
     public void test(Jedis jedis){
-        Object o = new Object();
-        String s = String.valueOf(o);
-        System.out.println(s);
-        String string = JSONObject.toJSONString(o);
-        System.out.println(string);
+//        Object o = new Object();
+//        String s = String.valueOf(o);
+//        System.out.println(s);
+//        String string = JSONObject.toJSONString(o);
+//        System.out.println(string);
+
+        Runtime runtime = Runtime.getRuntime();
+        System.out.println(runtime);
+
     }
 }

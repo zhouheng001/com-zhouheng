@@ -17,7 +17,21 @@ class Solution {
 //        System.out.println(c == d);
 //        System.out.println(a == b);
 
-        Mirror(new TreeNode(3));
+//        Mirror(new TreeNode(3));
+        ListNode node = new ListNode(3);
+        ListNode node1 = new ListNode(32);
+        node.next=node1;
+        ListNode node2 = FindKthToTail(node,2);
+        System.out.println(node2.val);
+
+    }
+
+    public  void convert(StringBuilder name){
+      name.append("dasfasdf");
+    }
+
+    public  void convert(Integer name){
+      name=3;
     }
 
     public static boolean Find(int target, Vector<Vector<Integer>> array) {
@@ -67,7 +81,7 @@ class Solution {
 
     }
 
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next = null;
 
@@ -152,5 +166,97 @@ class Solution {
         Mirror(root.right);
     }
 
+    public double Power(double base, int exponent) {
+        double mul = 1.0;
+        if (exponent == 0) return 1.0000000;
 
+        if (base < 0.0000001 && base > -0.0000001) {
+            return 0;
+        }
+
+        if (exponent > 0) {
+            for (int i = 0; i < exponent; i++) {
+                mul = mul * base;
+            }
+        } else {
+            exponent = -exponent;
+            for (int i = 0; i < exponent; i++) {
+                mul = mul * base;
+            }
+            mul = 1.0 / mul;
+        }
+
+        return mul;
+    }
+
+    public static ListNode FindKthToTail(ListNode head, int k) {
+
+        int size=getSize(head);
+        System.out.println(head);
+
+        int index = size-k;
+        int index1=0;
+        while (head!=null){
+            if(index1==index) {
+                break;
+            }
+            head = head.next;
+            index1++;
+        }
+
+        return head;
+
+    }
+
+    public static ListNode FindKthToTai1(ListNode head, int k) {
+
+        if(head==null) return head;
+
+        ListNode node = FindKthToTai1(head.next,k);
+
+        return node;
+    }
+
+    public static ListNode ReverseList(ListNode head) {
+
+        if(head==null || head.next==null) return head;
+
+        ListNode node = ReverseList(head.next);
+
+        head.next.next=head;
+        head.next=null;
+
+        return node;
+    }
+
+    public static int getSize(ListNode head){
+        int size=0;
+        while (head != null) {
+            head = head.next;
+            size++;
+        }
+        return size;
+    }
+
+    public boolean HasSubtree(TreeNode root1,TreeNode root2) {
+
+        if(root1==null || root2 ==null) return false;
+
+
+        return isSubtree(root1,root2)||HasSubtree(root1.left,root2) || HasSubtree(root1.right,root2);
+
+    }
+
+    public boolean isSubtree(TreeNode root1,TreeNode root2){
+        if(root2==null){
+            return true;
+        }
+        if(root1==null){
+            return false;
+        }
+        if(root1.val==root2.val){
+            return isSubtree(root1.left,root2.left)&&isSubtree(root1.right,root2.right);
+        }
+        return false;
+    }
 }

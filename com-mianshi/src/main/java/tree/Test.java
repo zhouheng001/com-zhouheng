@@ -1,6 +1,7 @@
 package tree;
 
-import com.alibaba.fastjson.JSONObject;
+import java.io.Serializable;
+import java.util.Stack;
 
 /**
  * 描述:
@@ -8,7 +9,9 @@ import com.alibaba.fastjson.JSONObject;
  * @author zhouheng
  * @create 2019-01-15 17:24
  */
-public class Test {
+public class Test implements Serializable{
+
+    private static final long serialVersionUID = 2754140981110293772L;
 
     public static void main(String[] args) {
         MyTree node = new MyTree(1);
@@ -41,6 +44,12 @@ public class Test {
 //            System.out.println();
 //        }
 
+
+        Runtime runtime = Runtime.getRuntime();
+        System.out.println(runtime.totalMemory()/(1024*1024));
+        runtime.exit(1);
+
+        System.out.println(123);
 
     }
 
@@ -81,12 +90,16 @@ public class Test {
 
     @org.junit.Test
     public void test() {
-        Object o = new Object();
-        String s = String.valueOf(o);
-        System.out.println(s);
-        System.out.println(Integer.toHexString(o.hashCode()));
-        String string = JSONObject.toJSONString(o);
-        System.out.println(string);
+//        Object o = new Object();
+//        String s = String.valueOf(o);
+//        System.out.println(s);
+//        System.out.println(Integer.toHexString(o.hashCode()));
+//        String string = JSONObject.toJSONString(o);
+//        System.out.println(string);
+//        for (int i=0;i<10;i++) System.out.println(i);
+        Stack<Integer> stack = new Stack<>();
+
+
     }
 
 }
