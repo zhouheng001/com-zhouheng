@@ -8,16 +8,23 @@ package basicdatatype;
  */
 public class MySwitch {
 
+
     public static void main(String[] args) {
-        byte b = 1;
-        char a = '我';
-        int c =1;
-        short d =2;
-        long e = 3;
-        float f = 6.3f;
-        double g = 3.45d;
-        boolean h = false;
+        byte b = 1;  //一个字节
+        char a = '我';  //两个字节
+        int c =1;      //四个字节
+        short d =2;    //两个字节
+        long e = 3;    //八个字节
+        float f = 6.3f;  //四个字节
+        double g = 3.45d;  //八个字节
+        boolean h = false;   //一个字节
         String i = "dsfadsf";
+
+        double pow = Math.pow(2, 4);
+        System.out.println(Short.MAX_VALUE);
+        System.out.println(Integer.MAX_VALUE);
+
+
 
         switch (i) {
 //            case '他':
@@ -26,6 +33,9 @@ public class MySwitch {
 //            case '我':
 //                System.out.println(a);
 //                break;
+            case "dsfadsf":
+                System.out.println("dSD");
+                break;
             default:
                 System.out.println(456);
                 break;

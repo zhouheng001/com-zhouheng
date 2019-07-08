@@ -2,7 +2,6 @@ package mythreadpool;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveAction;
@@ -18,22 +17,25 @@ public class MyThreadPool {
 
     public static void main(String[] args) throws IllegalAccessException, InstantiationException {
 
-        List<Integer> list = new ArrayList<>();
-        Random random = new Random();
-        List<String> collect = null;
-        for (int i = 0, j = 0; i < 10000000; i++, j++) {
-            list.add(random.nextInt());
-        }
+//        List<Integer> list = new ArrayList<>();
+//        Random random = new Random();
+//        List<String> collect = null;
+//        for (int i = 0, j = 0; i < 10000000; i++, j++) {
+//            list.add(random.nextInt());
+//        }
+//
+//
+//        long l = System.currentTimeMillis();
+//        try {
+//           collect = forkjoin(list,new Integer(1));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        long l1 = System.currentTimeMillis();
+//        System.out.println(l1 - l);
 
 
-        long l = System.currentTimeMillis();
-        try {
-           collect = forkjoin(list,new Integer(1));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        long l1 = System.currentTimeMillis();
-        System.out.println(l1 - l);
+
     }
 
     static <T> List<String> reverse(List<T> list,T t1) throws Exception {

@@ -65,6 +65,14 @@ public class MyHashTable<K,V> extends Hashtable<K,V> {
             throw new NullPointerException();
         }
 
+        if(key.equals("1")){
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
         // Makes sure the key is not already in the hashtable.
         MyHashTable.Entry<?,?> tab[] = table;
         int hash = key.hashCode();

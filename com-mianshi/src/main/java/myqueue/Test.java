@@ -10,18 +10,27 @@ public class Test {
     public static void main(String[] args) throws InterruptedException {
 
         MyQueue myQueue = new MyQueue(5);
-        for (int i = 0; i < 10; i++) {
-            int finalI = i;
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    myQueue.addQueue(finalI);
-                }
-            }).start();
-        }
-        System.out.println(myQueue.getSize());
-//        Thread.sleep(3000);
-        System.out.println("!----------------");
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 100; i++) {
+                myQueue.addQueue(i);
+                System.out.println("塞入" + i);
+            }
+        });
+
+
+        t1.start();
+//        for (int i = 0; i < 10; i++) {
+//            int finalI = i;
+//            new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    myQueue.addQueue(finalI);
+//                }
+//            }).start();
+//        }
+        Thread.sleep(3000);
+//        System.out.println("!----------------");
 
 
         for (int i = 0; i < 10; i++) {

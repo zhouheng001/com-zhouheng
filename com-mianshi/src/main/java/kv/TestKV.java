@@ -1,6 +1,9 @@
 package kv;
 
+import kv.hash.MyHashTable;
+
 import java.lang.reflect.InvocationTargetException;
+import java.util.Hashtable;
 
 /**
  * 描述:
@@ -10,7 +13,7 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class TestKV {
 
-    public static void main(String[] args) throws IllegalAccessException, InstantiationException, InvocationTargetException {
+    public static void main(String[] args) throws IllegalAccessException, InstantiationException, InvocationTargetException, InterruptedException {
 //        String test = test(1, "有值", "输出");
 //        System.out.println(test);
 //        String test1 = test(1, null, "输出");
@@ -67,13 +70,28 @@ public class TestKV {
 //
 //        Map<String, String> stringStringMap = Collections.synchronizedMap(map);
 
-//        Hashtable hashTable = new MyHashTable();
-//        hashTable.put("1","zhouheng");
-//        System.out.println("put1成功!");
-//        Object o = hashTable.get("1");
-//        System.out.println(o);
-//        hashTable.put("2","zhouheng");
-//        System.out.println("put2成功!");
+        Hashtable hashTable = new MyHashTable();
+
+        new  Thread(new Runnable() {
+            @Override
+            public void run() {
+                hashTable.put("1","zhouheng");
+                System.out.println("put1成功!");
+            }
+        }).start();
+
+        hashTable.put("2","zhouheng");
+        System.out.println("put2成功!");
+
+
+        new  Thread(new Runnable() {
+            @Override
+            public void run() {
+                Object o = hashTable.get("2");
+                System.out.println(o);
+            }
+        }).start();
+
 //
 //        BlockingQueue blockingDeque = new ArrayBlockingQueue(10);
 

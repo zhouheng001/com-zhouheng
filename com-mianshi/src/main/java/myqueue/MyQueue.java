@@ -3,6 +3,8 @@ package myqueue;
 import lombok.Data;
 
 import java.util.LinkedList;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 描述:
@@ -16,6 +18,10 @@ public class MyQueue {
      * 队列容器
      */
     private LinkedList list = new LinkedList();
+
+    private ReentrantLock lock = new ReentrantLock();
+    private Condition isNull = lock.newCondition();
+    private Condition isFull = lock.newCondition();
 
     public MyQueue(LinkedList list, int size) {
         this.list = list;
@@ -34,45 +40,62 @@ public class MyQueue {
      */
     private int size;
 
-    public synchronized void addQueue(Object object) {
+    public  void addQueue(Object object) {
 
-        try {
-            /** 判断队列是否满了 */
-            while (list.size() == this.size) {
-                wait();
+            try {
+                lock.lock();
+                /** 判断队列是否满了 */
+                try {
+                    while (list.size() == this.size) {
+                        System.out.println("已经满5个了!");
+                        isFull.await();
+                    }
+                }catch (Exception e){
+                    isFull.signal();
+                    System.out.println("异常信息"+e);
+                }
+
+                /** 队列中添加消息 */
+                list.add(object);
+
+                /** 当队列大小不为空是唤醒所有消费线程 */
+                if (list.size() > 0) {
+                    isNull.signal();
+                }
+            } catch (Exception e) {
+                System.out.println("异常信息"+e);
+            }finally {
+                lock.unlock();
             }
 
-            /** 队列中添加消息 */
-            list.add(object);
-
-            /** 当队列大小不为空是唤醒所有消费线程 */
-            if (list.size() > 0) {
-                notifyAll();
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
 
     }
 
-    public synchronized Object removeQueue() {
+    public  Object removeQueue() {
 
-        try {
-            /** 判断队列是否里面是否消费完了 */
-            while (list.size() == 0) {
-                wait();
+            try {
+                lock.lock();
+                /** 判断队列是否里面是否消费完了 */
+                try {
+                    while (list.size() == 0) {
+                        System.out.println("已经空了!");
+                        isNull.await();
+                    }
+                }catch (Exception e){
+                    isNull.signal();
+                }
+
+                /** 当队列大小小于最大尺寸是,唤醒所有添加线程 */
+                if (list.size() < this.size) {
+                    isFull.signal();
+                }
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }finally {
+                lock.unlock();
             }
 
-            Object remove = list.remove();
-
-            /** 当队列大小小于最大尺寸是,唤醒所有添加线程 */
-            if (list.size() < this.size) {
-                notifyAll();
-            }
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
 
         return list.remove();
     }
