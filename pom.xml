@@ -33,6 +33,7 @@
         <module>com-springmvcandservlet3</module>
         <module>com-mybatis-generator</module>
         <module>com-mybatis-plus</module>
+        <module>com-minahttp</module>
     </modules>
 
     <properties>
