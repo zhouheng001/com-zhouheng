@@ -12,7 +12,7 @@ import javax.annotation.Resource;
  * @Description
  * @Autohr supers【weChat:13031016567】
  */
-@Service("userService")
+@Service
 public class UserServiceImpl implements IUserService {
 
     @Resource

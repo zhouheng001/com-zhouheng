@@ -6,6 +6,7 @@ import com.sub.dt.pojo.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -17,15 +18,23 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("/spring-config.xml")
 public class TestUserService {
 
-    @Autowired
-    private IUserService userService;
+//    @Autowired
+//    private IUserService userService;
 
+    @Autowired
+    ApplicationContext applicationContext;
+
+    @Autowired
+    IUserService userService;
     /**
      * @Description 测试分库分表插入
      * @Autohr supers【weChat:13031016567】
      */
     @Test
     public void testInsertUser(){
+
+        System.out.println(applicationContext);
+
         User user = new User();
         user.setUserNum("wergsgdf3243");
         user.setUserName("admin");
