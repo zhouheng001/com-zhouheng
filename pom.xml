@@ -33,6 +33,7 @@
         <module>com-springmvcandservlet3</module>
         <module>com-mybatis-generator</module>
         <module>com-mybatis-plus</module>
+        <module>com-minahttp</module>
     </modules>
 
     <properties>
@@ -190,7 +191,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.6.1</version>
+                <version>3.6.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
