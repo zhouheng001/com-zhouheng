@@ -23,5 +23,6 @@ public class Test {
 
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("spring-config.xml");
         IUserDao bean = classPathXmlApplicationContext.getBean(IUserDao.class);
+        System.out.println(bean);
     }
 }
