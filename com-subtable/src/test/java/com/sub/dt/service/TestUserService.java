@@ -36,7 +36,7 @@ public class TestUserService {
         System.out.println(applicationContext);
 
         User user = new User();
-        user.setUserNum("zhouheng01");
+        user.setUserNum("zhouheng07");
         user.setUserName("admin");
         user.setAge(23);
         user.setPassword("adf23");
