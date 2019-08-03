@@ -7,9 +7,15 @@ package com.tujia.com.jdk8.interfacetest;
  * @create 2019-06-10 下午 2:54
  */
 public class Test {
+
+    public static final Integer a = null;
+
     public static void main(String[] args) {
-        UserServiceImpl.test();
-        UserServiceImpl userService = new UserService();
+        IUserService.test();
+        IUserService userService = new UserServiceImpl();
         userService.teset1("zhou");
+
+
+        System.out.println(IUserService.a);
     }
 }

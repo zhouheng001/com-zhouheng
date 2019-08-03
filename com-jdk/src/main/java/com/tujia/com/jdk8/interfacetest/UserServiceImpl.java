@@ -1,15 +1,11 @@
 package com.tujia.com.jdk8.interfacetest;
 
 /**
- * Create by Administrator on 2019/6/10 0010
+ * 描述:
+ *
+ * @author zhouheng
+ * @create 2019-06-10 下午 2:55
  */
-public interface UserServiceImpl {
+public class UserServiceImpl implements IUserService {
 
-    static void test(){
-        System.out.println(123);
-    }
-
-    default void teset1(String name){
-        System.out.println(name);
-    }
 }
