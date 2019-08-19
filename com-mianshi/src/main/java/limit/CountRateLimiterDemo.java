@@ -15,7 +15,7 @@ public class CountRateLimiterDemo {
             semphore.acquire();  
             // 处理核心逻辑  
             TimeUnit.SECONDS.sleep(1);
-            System.out.println("--" + System.currentTimeMillis() / 1000);  
+            System.out.println(Thread.currentThread().getId()+"--" + System.currentTimeMillis() / 1000);
         } catch (InterruptedException e) {  
             e.printStackTrace();  
         } finally {  
