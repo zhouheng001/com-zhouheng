@@ -26,4 +26,8 @@ public class Person {
     public void setValue(String value) {
         this.value = value;
     }
+
+    public boolean isPerson(){
+        return this.name=="周恒";
+    }
 }

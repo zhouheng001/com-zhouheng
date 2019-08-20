@@ -61,16 +61,21 @@ public class Test111 {
 //
 //        Optional<Integer> reduce1 = s1.stream().map(s -> Integer.parseInt(s)).reduce(Integer::max);
 //        reduce1.ifPresent(System.out::println);
-
-          List<String> str = new ArrayList<>();
+        //Collection系统集合中提供的流
+        List<String> str = new ArrayList<>();
         Stream<String> stream = str.stream();
-
+        //Arrays中的静态方法stream()获取数组流
         Employee[] employees = new Employee[10];
         Stream<Employee> stream1 = Arrays.stream(employees);
 
-        Stream.of("aa","bb","cc");
+        //通过Stream中的of方法
+       Stream<String> aa = Stream.of("aa", "bb", "cc");
+        Object[] objects = aa.toArray();
 
 
+        //创建无限流
+        Stream<Integer> iterate = Stream.iterate(0, x -> x + 2);
+        iterate.skip(20).limit(10).forEach(System.out::println);
     }
 
 }
