@@ -8,8 +8,9 @@ package com.tujia.com.jdk8.interfacetest;
  */
 public class Test {
     public static void main(String[] args) {
-        UserServiceImpl.test();
-        UserServiceImpl userService = new UserService();
-        userService.teset1("zhou");
+//        UserServiceImpl.test();
+//        UserServiceImpl userService = new UserService();
+//        userService.teset1("zhou");
+//        List<String> list =
     }
 }
