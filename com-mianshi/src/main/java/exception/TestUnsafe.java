@@ -3,6 +3,7 @@ package exception;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -23,8 +24,10 @@ public class TestUnsafe {
 //        }
 //        System.out.println(123);
 //        System.out.println(get(1,0));
-        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-        concurrentHashMap.put(null,null);
+//        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
+//        concurrentHashMap.put(null,null);
+
+//        HashMap hashMap =new HashMap(7);
 //
 //        Person person = new Person();
 //        person.setName("周恒");
@@ -35,6 +38,7 @@ public class TestUnsafe {
 //        System.out.println(addressSize);
 //        boolean unsafe = new TestUnsafe().get1();
 //        System.out.println(unsafe);
+        test11(10);
     }
 
     public static int get(int a,int b){
@@ -73,4 +77,23 @@ public class TestUnsafe {
         return true;
     }
 
+    public static void test11(int n){
+//        int n = cap - 1;
+//        n |= n >>> 1;
+//        n |= n >>> 2;
+//        n |= n >>> 4;
+//        n |= n >>> 8;
+//        n |= n >>> 16;
+
+        n+=1;
+        System.out.println(n);
+        n-=1;
+        System.out.println(n);
+        n=-1;
+        System.out.println(n);
+        n++;
+        System.out.println(n);
+        ++n;
+        System.out.println(n);
+    }
 }
