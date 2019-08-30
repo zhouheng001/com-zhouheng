@@ -1,6 +1,11 @@
 package com.tujia.com.jdk8.stream;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 描述: api
@@ -42,14 +47,14 @@ public class TestBigDecial {
         // BigDecimal pow = bigDecimal.pow(4);
         // System.out.println(pow);
         //
-        // BigDecimal bigDecimal1 = new BigDecimal(0);
-        // List<String> s1 = Arrays.asList("1", "2", "3","4", "4", "5","6", "7");
-        // Stream<Integer> integerStream = s1.stream().map(s -> Integer.parseInt(s));
-        // System.out.println(integerStream.count());
-        // System.out.println(integerStream.reduce(Integer::sum).get());
-        // Map<Integer, List<Integer>> collect = s1.stream().map(ss ->
-        // Integer.parseInt(ss)).parallel().collect(Collectors.groupingBy(ss -> ss % 2));
-        // System.out.println(collect);
+         BigDecimal bigDecimal1 = new BigDecimal(0);
+         List<String> s1 = Arrays.asList("1", "2", "3","4", "4", "5","6", "7");
+         Stream<Integer> integerStream = s1.stream().map(s -> Integer.parseInt(s));
+         System.out.println(integerStream.count());
+//         System.out.println(integerStream.reduce(Integer::sum).get());
+         Map<Integer, List<Integer>> collect = s1.stream().map(ss ->
+         Integer.parseInt(ss)).parallel().collect(Collectors.groupingBy(ss -> ss % 2));
+         System.out.println(collect);
 
         // %s: 字符串类型，如："ljq"
         // %b: 布尔类型，如：true
