@@ -34,6 +34,7 @@
         <module>com-mybatis-generator</module>
         <module>com-mybatis-plus</module>
         <module>com-leetcode</module>
+        <module>com-alitest</module>
     </modules>
 
     <properties>

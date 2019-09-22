@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
  * @create 2019-01-28 17:18
  */
 @Component
-@Scope("singleton")
 public class Cat implements InitializingBean, DisposableBean {
 
     public Cat(){
