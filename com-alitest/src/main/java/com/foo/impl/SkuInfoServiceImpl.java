@@ -7,7 +7,10 @@ import lombok.extern.slf4j.Slf4j;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 /**
@@ -68,9 +71,9 @@ public class SkuInfoServiceImpl implements SkuInfoService {
                     List<SkuInfoDTO> skuInfoDTOList = null;
                     try {
                         skuInfoDTOList = serviceBean.findByIds(nowskuIdList);
-                    }catch (Exception e){
-                         log.error("查询sku信息失败,失败的原因是{}",e.getMessage());
-                         throw new Exception("查询sku信息失败的skuIds："+nowskuIdList);
+                    } catch (Exception e) {
+                        log.error("查询sku信息失败,失败的原因是{}", e.getMessage());
+                        throw new Exception("查询sku信息失败的skuIds：" + nowskuIdList);
                     }
                     return skuInfoDTOList;
                 }
@@ -93,9 +96,17 @@ public class SkuInfoServiceImpl implements SkuInfoService {
         executorService.shutdown();
 
         return skuInfoDTOS.stream()
-                .map(skuInfoDTO ->
-                        //根据商品类型进行分组聚合
-                        skuInfoDTO.getSkuType().equals("ORIGIN") ? new SkuInfoVO(skuInfoDTO.getName(), skuInfoDTO.getArtNo(), "", getInventory(skuInfoDTO.getId())) : new SkuInfoVO(skuInfoDTO.getName(), "", skuInfoDTO.getSpuId(), getInventory(skuInfoDTO.getId())))
+                .map(skuInfoDTO -> {
+                            //根据商品类型进行分组聚合
+                            if (skuInfoDTO.getSkuType().equals("ORIGIN")) {
+                                return new SkuInfoVO(skuInfoDTO.getName(), skuInfoDTO.getArtNo(), "", getInventory(skuInfoDTO.getId()));
+                            } else if (skuInfoDTO.getSkuType().equals("DIGITAL")) {
+                                return new SkuInfoVO(skuInfoDTO.getName(), "", skuInfoDTO.getSpuId(), getInventory(skuInfoDTO.getId()));
+                            }else {
+                                return new SkuInfoVO(skuInfoDTO.getName(), "","", getInventory(skuInfoDTO.getId()));
+                            }
+                        }
+                )
                 .collect(Collectors.toList());
 
     }
