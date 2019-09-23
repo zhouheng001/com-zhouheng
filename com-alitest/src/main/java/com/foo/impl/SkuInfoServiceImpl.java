@@ -103,7 +103,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
                             } else if (skuInfoDTO.getSkuType().equals("DIGITAL")) {
                                 return new SkuInfoVO(skuInfoDTO.getName(), "", skuInfoDTO.getSpuId(), getInventory(skuInfoDTO.getId()));
                             }else {
-                                return new SkuInfoVO(skuInfoDTO.getName(), "","", getInventory(skuInfoDTO.getId()));
+                                return new SkuInfoVO(skuInfoDTO.getName(), skuInfoDTO.getArtNo(),skuInfoDTO.getSpuId(), getInventory(skuInfoDTO.getId()));
                             }
                         }
                 )
