@@ -27,7 +27,7 @@ public class TestUnsafe {
 //        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
 //        concurrentHashMap.put(null,null);
 
-//        HashMap hashMap =new HashMap(7);
+        HashMap hashMap =new HashMap(7);
 //
 //        Person person = new Person();
 //        person.setName("周恒");
