@@ -52,7 +52,6 @@ public class SkuInfoServiceImpl implements SkuInfoService {
         ExecutorService executorService = ExecutorsUtils.getThreadPool(threadNum);
 
         List<Callable<List<SkuInfoDTO>>> cList = new ArrayList<>();
-        Callable<List<SkuInfoDTO>> task = null;
         List<String> skuIdList = null;
 
         //多线程获取sku 基本信息
@@ -64,7 +63,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
             }
 
             final List<String> nowskuIdList = skuIdList;
-            task = new Callable<List<SkuInfoDTO>>() {
+            cList.add(new Callable<List<SkuInfoDTO>>() {
                 @Override
                 public List<SkuInfoDTO> call() throws Exception {
 
@@ -77,8 +76,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
                     }
                     return skuInfoDTOList;
                 }
-            };
-            cList.add(task);
+            });
         }
 
         //执行任务
@@ -102,8 +100,8 @@ public class SkuInfoServiceImpl implements SkuInfoService {
                                 return new SkuInfoVO(skuInfoDTO.getName(), skuInfoDTO.getArtNo(), "", getInventory(skuInfoDTO.getId()));
                             } else if (skuInfoDTO.getSkuType().equals("DIGITAL")) {
                                 return new SkuInfoVO(skuInfoDTO.getName(), "", skuInfoDTO.getSpuId(), getInventory(skuInfoDTO.getId()));
-                            }else {
-                                return new SkuInfoVO(skuInfoDTO.getName(), skuInfoDTO.getArtNo(),skuInfoDTO.getSpuId(), getInventory(skuInfoDTO.getId()));
+                            } else {
+                                return new SkuInfoVO(skuInfoDTO.getName(), skuInfoDTO.getArtNo(), skuInfoDTO.getSpuId(), getInventory(skuInfoDTO.getId()));
                             }
                         }
                 )
