@@ -37,45 +37,30 @@ public class SkuInfoServiceImpl implements SkuInfoService {
         }
 
         List<SkuInfoDTO> skuInfoDTOS = new ArrayList<>();
+        int threadNum = skuIds.size() % threadSize == 0 ? skuIds.size() / threadSize : skuIds.size() / threadSize + 1;
 
-        int remainder = skuIds.size() % threadSize;
-        int threadNum;
-        if (remainder == 0) {
-            threadNum = skuIds.size() / threadSize;
-        } else {
-            threadNum = skuIds.size() / threadSize + 1;
-        }
 
         ExecutorService executorService = ExecutorsUtils.getThreadPool(threadNum);
 
         List<Callable<List<SkuInfoDTO>>> cList = new ArrayList<>();
-        Callable<List<SkuInfoDTO>> task = null;
         List<String> skuIdList = null;
 
         //多线程获取sku 基本信息
         for (int i = 0; i < threadNum; i++) {
-            if (i == threadNum - 1) {
-                skuIdList = skuIds.subList(i * threadSize, skuIds.size());
-            } else {
-                skuIdList = skuIds.subList(i * threadSize, (i + 1) * threadSize);
-            }
+
+            skuIdList = i == threadNum - 1 ? skuIds.subList(i * threadSize, skuIds.size()) : skuIds.subList(i * threadSize, (i + 1) * threadSize);
 
             final List<String> nowskuIdList = skuIdList;
-            task = new Callable<List<SkuInfoDTO>>() {
-                @Override
-                public List<SkuInfoDTO> call() throws Exception {
-
-                    List<SkuInfoDTO> skuInfoDTOList = null;
-                    try {
-                        skuInfoDTOList = serviceBean.findByIds(nowskuIdList);
-                    }catch (Exception e){
-                         log.error("查询sku信息失败,失败的原因是{}",e.getMessage());
-                         throw new Exception("查询sku信息失败的skuIds："+nowskuIdList);
-                    }
-                    return skuInfoDTOList;
+            cList.add(() -> {
+                List<SkuInfoDTO> skuInfoDTOList = null;
+                try {
+                    skuInfoDTOList = serviceBean.findByIds(nowskuIdList);
+                } catch (Exception e) {
+                    log.error("查询sku信息失败,异常信息{}", e.getMessage());
+                    throw new Exception("查询sku信息失败的skuIds：" + nowskuIdList);
                 }
-            };
-            cList.add(task);
+                return skuInfoDTOList;
+            });
         }
 
         //执行任务
