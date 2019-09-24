@@ -39,9 +39,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
         List<SkuInfoDTO> skuInfoDTOS = new ArrayList<>();
         int threadNum = skuIds.size() % threadSize == 0 ? skuIds.size() / threadSize : skuIds.size() / threadSize + 1;
 
-
         ExecutorService executorService = ExecutorsUtils.getThreadPool(threadNum);
-
         List<Callable<List<SkuInfoDTO>>> cList = new ArrayList<>();
         List<String> skuIdList = null;
 
