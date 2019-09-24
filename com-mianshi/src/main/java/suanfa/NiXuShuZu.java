@@ -16,6 +16,7 @@ public class NiXuShuZu {
 
     }
 
+    /*************************************************     非递归方法实现    ****************************************************/
 
     public static void printfNi(int[][] nums) {
 
@@ -31,14 +32,6 @@ public class NiXuShuZu {
 
     }
 
-    /** 法一倒叙数组
-     * 非递归方法实现
-     * @param nums
-     * @param rstart
-     * @param cstart
-     * @param rend
-     * @param cend
-     */
     public static void print(int[][] nums, int rstart, int cstart, int rend, int cend) {
 
         for (int i = cstart; i < cend; i++) {
@@ -59,7 +52,19 @@ public class NiXuShuZu {
 
     }
 
+    /** 方法二 递归方法实现逆序输出二维数据 */
 
+    public void diGui(int [][] nums,int rstart, int cstart, int rend, int cend){
+
+        if(rstart<=rend||cstart<cend){
+            print(nums,rstart,cstart,rend,cend);
+            diGui(nums,rstart,cstart,rend,cend);
+            rstart++;
+            cstart++;
+            rend--;
+            cend--;
+        }
+    }
 
 
 }

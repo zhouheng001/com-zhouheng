@@ -78,9 +78,16 @@ public class SkuInfoServiceImpl implements SkuInfoService {
         executorService.shutdown();
 
         return skuInfoDTOS.stream()
-                .map(skuInfoDTO ->
-                        //根据商品类型进行分组聚合
-                        skuInfoDTO.getSkuType().equals("ORIGIN") ? new SkuInfoVO(skuInfoDTO.getName(), skuInfoDTO.getArtNo(), "", getInventory(skuInfoDTO.getId())) : new SkuInfoVO(skuInfoDTO.getName(), "", skuInfoDTO.getSpuId(), getInventory(skuInfoDTO.getId())))
+                .filter(skuInfoDTO -> skuInfoDTO.getSkuType().equals("ORIGIN") || skuInfoDTO.getSkuType().equals("DIGITAL"))
+                .map(skuInfoDTO -> {
+                            //根据商品类型进行分组聚合
+                            if (skuInfoDTO.getSkuType().equals("ORIGIN")) {
+                                return new SkuInfoVO(skuInfoDTO.getName(), skuInfoDTO.getArtNo(), "", getInventory(skuInfoDTO.getId()));
+                            } else {
+                                return new SkuInfoVO(skuInfoDTO.getName(), "", skuInfoDTO.getSpuId(), getInventory(skuInfoDTO.getId()));
+                            }
+                        }
+                )
                 .collect(Collectors.toList());
 
     }
