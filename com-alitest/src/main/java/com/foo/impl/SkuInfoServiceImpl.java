@@ -39,41 +39,7 @@ public class SkuInfoServiceImpl implements SkuInfoService {
         List<SkuInfoDTO> skuInfoDTOS = new ArrayList<>();
         int threadNum = skuIds.size() % threadSize == 0 ? skuIds.size() / threadSize : skuIds.size() / threadSize + 1;
 
-        ExecutorService executorService = ExecutorsUtils.getThreadPool(threadNum);
-        List<Callable<List<SkuInfoDTO>>> cList = new ArrayList<>();
-        List<String> skuIdList = null;
-
-        //多线程获取sku 基本信息
-        for (int i = 0; i < threadNum; i++) {
-
-            skuIdList = i == threadNum - 1 ? skuIds.subList(i * threadSize, skuIds.size()) : skuIds.subList(i * threadSize, (i + 1) * threadSize);
-
-            final List<String> nowskuIdList = skuIdList;
-            cList.add(() -> {
-                List<SkuInfoDTO> skuInfoDTOList = null;
-                try {
-                    skuInfoDTOList = serviceBean.findByIds(nowskuIdList);
-                } catch (Exception e) {
-                    log.error("查询sku信息失败,异常信息{}", e.getMessage());
-                    throw new Exception("查询sku信息失败的skuIds：" + nowskuIdList);
-                }
-                return skuInfoDTOList;
-            });
-        }
-
-        //执行任务
-        List<Future<List<SkuInfoDTO>>> results = executorService.invokeAll(cList);
-
-        results.stream().forEach(result -> {
-            try {
-                skuInfoDTOS.addAll(result.get());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                log.error("部分产品信息返回有误,{}" + e.getMessage());
-            }
-        });
-        executorService.shutdown();
+        ExecutorsUtils.invokeAll(skuInfoDTOS,skuIds,threadNum,threadSize,(List<String> nowskuIdList)->serviceBean.findByIds(nowskuIdList));
 
         return skuInfoDTOS.stream()
                 .filter(skuInfoDTO -> skuInfoDTO.getSkuType().equals("ORIGIN") || skuInfoDTO.getSkuType().equals("DIGITAL"))
