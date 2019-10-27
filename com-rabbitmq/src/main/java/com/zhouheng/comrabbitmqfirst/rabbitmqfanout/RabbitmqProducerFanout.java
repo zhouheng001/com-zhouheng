@@ -1,4 +1,4 @@
-package com.zhouheng.comrabbitmq.rabbitmqdirect;
+package com.zhouheng.comrabbitmqfirst.rabbitmqfanout;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -7,7 +7,7 @@ import com.rabbitmq.client.ConnectionFactory;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public class RabbitmqProducerDirect {
+public class RabbitmqProducerFanout {
 
     public static void main(String[] args) throws IOException, TimeoutException {
 
@@ -23,8 +23,8 @@ public class RabbitmqProducerDirect {
 
         Channel channel = connection.createChannel();
 
-        String exchangeName  = "tuling-change-01";
-        String routingKey = "tuling.directchange.key";
+        String exchangeName  = "tuling-changefanout-01";
+        String routingKey = "45fads5f4as5";
 
         for (int i = 0; i < 5; i++) {
             String message="hello--"+i;

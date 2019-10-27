@@ -1,4 +1,4 @@
-package com.zhouheng.comrabbitmq.rabbitmqdirect;
+package com.zhouheng.comrabbitmqsecond;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -6,6 +6,8 @@ import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.QueueingConsumer;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeoutException;
 
 public class RabbitmqConsumerDirect {
@@ -29,20 +31,26 @@ public class RabbitmqConsumerDirect {
         String exchangeType ="direct";
         String routingKey = "tuling.directchange.key";
 
+        String dlxExchangeName= "tuling-dlxchange-01";
+        String dlxQueueName="tuling_dlxqueue_01";
+
+        //声明一个正常队列
         channel.exchangeDeclare(exchangeName,exchangeType,true,false,null);
-
-        channel.queueDeclare(queueName,true,false,true,null);
-
+        Map<String ,Object> argurments = new HashMap<>();
+        argurments.put("x-dead-letter-exchange",dlxExchangeName);
+        channel.queueDeclare(queueName,true,false,true,argurments);
         channel.queueBind(queueName,exchangeName,routingKey);
 
-        QueueingConsumer queueingConsumer = new QueueingConsumer(channel);
-        channel.basicConsume(queueName,true,queueingConsumer);
+        //声明一个死信队列
+        channel.exchangeDeclare(dlxExchangeName,"topic",true,true,false,null);
+        channel.queueDeclare(dlxQueueName,true,true,true,null);
+        channel.queueBind(dlxQueueName,dlxExchangeName,"#");
 
-        while (true){
-            QueueingConsumer.Delivery delivery = queueingConsumer.nextDelivery();
-            String s = new String(delivery.getBody());
-            System.out.println("消费消息:"+s);
-        }
+//        channel.basicQos(0,1,false);
+
+
+        channel.basicConsume(queueName,false,new AngleCustomConsumer(channel));
+
 
     }
 }
