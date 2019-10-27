@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @create 2019-01-15 14:17
  */
 @Data
-public class MyQueue {
+public class MyBlockQueue {
     /**
      * 队列容器
      */
@@ -23,15 +23,15 @@ public class MyQueue {
     private Condition isNull = lock.newCondition();
     private Condition isFull = lock.newCondition();
 
-    public MyQueue(LinkedList list, int size) {
+    public MyBlockQueue(LinkedList list, int size) {
         this.list = list;
         this.size = size;
     }
 
-    public MyQueue() {
+    public MyBlockQueue() {
     }
 
-    public MyQueue(int size) {
+    public MyBlockQueue(int size) {
         this.size = size;
     }
 

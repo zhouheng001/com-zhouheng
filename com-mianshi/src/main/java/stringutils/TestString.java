@@ -37,13 +37,15 @@ public class TestString {
 //        int i = a >>> 17;
 //        System.out.println(i);
 
-        LocalDateTime localDateTime = LocalDateTime.now();
-        int dayOfMonth = localDateTime.getDayOfMonth();
-        System.out.println(dayOfMonth);
-        DayOfWeek dayOfWeek = localDateTime.getDayOfWeek();
-        System.out.println(dayOfWeek);
-        String s = dayOfWeekCh(localDateTime);
-        System.out.println(s);
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//        int dayOfMonth = localDateTime.getDayOfMonth();
+//        System.out.println(dayOfMonth);
+//        DayOfWeek dayOfWeek = localDateTime.getDayOfWeek();
+//        System.out.println(dayOfWeek);
+//        String s = dayOfWeekCh(localDateTime);
+//        System.out.println(s);
+        String str = "test.csv";
+        System.out.println(str.endsWith(".csv"));
 
     }
 
