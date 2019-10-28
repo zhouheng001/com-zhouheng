@@ -12,10 +12,13 @@ import java.util.List;
 public class Test implements ITest {
     public static void main(String[] args) {
 //        new Test().main1(null);
-        List list = new ArrayList();
-        for (int i = 0; i < 1000000000 ; i++) {
-              list.add("dlkajflkdsjflkasdfj坚实的解放军安抚");
-        }
+//        List list = new ArrayList();
+//        for (int i = 0; i < 1000000000 ; i++) {
+//              list.add("dlkajflkdsjflkasdfj坚实的解放军安抚");
+//        }
+        String[] split = "*.csv".split(".");
+        System.out.println(split[split.length-2]);
+
     }
 
     @Override
