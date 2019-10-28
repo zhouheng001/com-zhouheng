@@ -35,6 +35,7 @@
         <module>com-mybatis-plus</module>
         <module>com-leetcode</module>
         <module>com-alitest</module>
+        <module>com-rabbitmq</module>
     </modules>
 
     <properties>
@@ -60,6 +61,8 @@
         <spring-aop.version>4.3.11.RELEASE</spring-aop.version>
         <spring-web.version>4.3.11.RELEASE</spring-web.version>
         <servlet-api.version>3.0-alpha-1</servlet-api.version>
+        <rabbitmq.version>3.6.5</rabbitmq.version>
+        <swagger-api.version>2.5.0</swagger-api.version>
     </properties>
 
     <dependencyManagement>
@@ -69,6 +72,12 @@
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
                 <version>${redis.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
+            <dependency>
+                <groupId>com.rabbitmq</groupId>
+                <artifactId>amqp-client</artifactId>
+                <version>${rabbitmq.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -178,6 +187,18 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+            </dependency>
+            <!-- swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger-api.version}</version>
+            </dependency>
+            <!-- swagger-ui -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger-api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -37,14 +37,26 @@ public class TestString {
 //        int i = a >>> 17;
 //        System.out.println(i);
 
-        LocalDateTime localDateTime = LocalDateTime.now();
-        int dayOfMonth = localDateTime.getDayOfMonth();
-        System.out.println(dayOfMonth);
-        DayOfWeek dayOfWeek = localDateTime.getDayOfWeek();
-        System.out.println(dayOfWeek);
-        String s = dayOfWeekCh(localDateTime);
-        System.out.println(s);
+//        LocalDateTime localDateTime = LocalDateTime.now();
+//        int dayOfMonth = localDateTime.getDayOfMonth();
+//        System.out.println(dayOfMonth);
+//        DayOfWeek dayOfWeek = localDateTime.getDayOfWeek();
+//        System.out.println(dayOfWeek);
+//        String s = dayOfWeekCh(localDateTime);
+//        System.out.println(s);
+        String date = "2018/09/22";
+        String date1 = "2018-09-22";
+        int i = date.indexOf("/");
+        int i1 = date.indexOf("-");
+        int i2 = date1.indexOf("-");
+        System.out.println(i);
+        System.out.println(i1);
+        System.out.println(i2);
 
+        int[] num = new int[5];
+        for (int j = 0; j < num.length; j++) {
+            System.out.println(num[j]);
+        }
     }
 
 

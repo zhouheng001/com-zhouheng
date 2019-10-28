@@ -11,9 +11,6 @@ public class ComAopandannotationApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ComAopandannotationApplication.class, args);
-
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
-        applicationContext.start();
     }
 
 }

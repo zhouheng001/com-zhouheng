@@ -9,11 +9,11 @@ package myqueue;
 public class Test {
     public static void main(String[] args) throws InterruptedException {
 
-        MyQueue myQueue = new MyQueue(5);
+        MyBlockQueue myBlockQueue = new MyBlockQueue(5);
 
         Thread t1 = new Thread(() -> {
             for (int i = 0; i < 100; i++) {
-                myQueue.addQueue(i);
+                myBlockQueue.addQueue(i);
                 System.out.println("塞入" + i);
             }
         });
@@ -25,7 +25,7 @@ public class Test {
 //            new Thread(new Runnable() {
 //                @Override
 //                public void run() {
-//                    myQueue.addQueue(finalI);
+//                    myBlockQueue.addQueue(finalI);
 //                }
 //            }).start();
 //        }
@@ -37,7 +37,7 @@ public class Test {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    Object o = myQueue.removeQueue();
+                    Object o = myBlockQueue.removeQueue();
                     System.out.println(o);
                 }
             }).start();
