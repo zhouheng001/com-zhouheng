@@ -4,23 +4,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.zhouheng</groupId>
-        <artifactId>com-summary</artifactId>
+        <artifactId>com-rabbitmq</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-    <groupId>com.zhouheng</groupId>
-    <artifactId>com-rabbitmq</artifactId>
+    <groupId>com-rabbitmq</groupId>
+    <artifactId>com-rabbitmq-quickstart</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>com-rabbitmq</name>
+    <name>com-rabbitmq-quickstart</name>
     <description>Demo project for Spring Boot</description>
 
-    <modules>
-        <module>com-rabbitmq-quickstart</module>
-        <module>com-spring-rabbitmq</module>
-        <module>com-springboot-rabbitmq-consumer</module>
-        <module>com-springboot-rabbitmq-product</module>
-    </modules>
 
     <dependencies>
         <dependency>

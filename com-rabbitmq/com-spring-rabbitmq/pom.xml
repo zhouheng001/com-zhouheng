@@ -4,28 +4,32 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.zhouheng</groupId>
-        <artifactId>com-summary</artifactId>
+        <artifactId>com-rabbitmq</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-    <groupId>com.zhouheng</groupId>
-    <artifactId>com-rabbitmq</artifactId>
+    <groupId>com-rabbitmq</groupId>
+    <artifactId>com-spring-rabbitmq</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>com-rabbitmq</name>
+    <name>com-spring-rabbitmq</name>
     <description>Demo project for Spring Boot</description>
 
-    <modules>
-        <module>com-rabbitmq-quickstart</module>
-        <module>com-spring-rabbitmq</module>
-        <module>com-springboot-rabbitmq-consumer</module>
-        <module>com-springboot-rabbitmq-product</module>
-    </modules>
 
     <dependencies>
         <dependency>
-            <groupId>com.rabbitmq</groupId>
-            <artifactId>amqp-client</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
