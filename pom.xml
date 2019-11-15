@@ -20,7 +20,7 @@
         <module>com-jdk</module>
         <module>com-aopandannotation</module>
         <module>com-gof</module>
-        <module>com-mianshi</module>
+        <module>com-practise</module>
         <module>com-dubbo-provider</module>
         <module>com-dubbo-api</module>
         <module>com-dubbo-consumer</module>
@@ -33,7 +33,6 @@
         <module>com-springmvcandservlet3</module>
         <module>com-mybatis-generator</module>
         <module>com-mybatis-plus</module>
-        <module>com-leetcode</module>
         <module>com-alitest</module>
         <module>com-rabbitmq</module>
     </modules>
