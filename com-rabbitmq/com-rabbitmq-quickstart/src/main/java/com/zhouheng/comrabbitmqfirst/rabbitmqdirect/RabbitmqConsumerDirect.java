@@ -16,7 +16,8 @@ public class RabbitmqConsumerDirect {
 
         connectionFactory.setHost("192.168.174.128");
         connectionFactory.setPort(5672);
-        connectionFactory.setVirtualHost("tuling");
+//        connectionFactory.setVirtualHost("zhouheng");
+        connectionFactory.setVirtualHost("/");
         connectionFactory.setUsername("zhouheng");
         connectionFactory.setPassword("123456");
 
