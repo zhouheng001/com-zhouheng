@@ -47,7 +47,7 @@
         <commons-lang3.version>3.7</commons-lang3.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <redis.version>2.9.0</redis.version>
-        <mybatis.version>1.3.2</mybatis.version>
+        <mybatis.version>2.0.1</mybatis.version>
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
         <servlet.version>3.0.1</servlet.version>
@@ -64,6 +64,8 @@
         <rabbitmq.version>3.6.5</rabbitmq.version>
         <swagger-api.version>2.5.0</swagger-api.version>
         <kafka.version>1.1.0</kafka.version>
+        <bopomofo4j.version>1.0.0</bopomofo4j.version>
+        <sharding.version>4.0.0-RC2</sharding.version>
     </properties>
 
     <dependencyManagement>
@@ -93,13 +95,23 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.kafka</groupId>
-                <artifactId>kafka‐clients</artifactId>
-                <version>${kafka.version}</version>
+                <artifactId>kafka-clients</artifactId>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
                 <version>${commons-logging.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${sharding.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -116,6 +128,12 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
                 <version>${jdbc.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.rnkrsoft.bopomofo4j/bopomofo4j -->
+            <dependency>
+                <groupId>com.rnkrsoft.bopomofo4j</groupId>
+                <artifactId>bopomofo4j</artifactId>
+                <version>${bopomofo4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>

@@ -5,6 +5,11 @@ import redis.clients.jedis.Jedis;
 
 import java.util.Collections;
 
+/**
+ *
+ * 100W数据在key和value都在10Byte左右时，占用空间100M左右，若使用Hash的压缩列表特性，内存占用减少到1/5
+ *
+ */
 public class RedisTool {
 
     private static final String LOCK_SUCCESS = "OK";

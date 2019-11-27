@@ -3,6 +3,7 @@ package kv;
 import kv.hash.MyHashTable;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import java.util.Hashtable;
 
 /**
@@ -60,7 +61,7 @@ public class TestKV {
 //        System.out.println(put);
 //        System.out.println(put1);
 //        System.out.println(map.get("a"));
-//        HashMap hashMap = new HashMap(4);
+        HashMap hashMap = new HashMap(4);
 //        hashMap.put(null,null);
 //        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
 //        concurrentHashMap.put("","");
