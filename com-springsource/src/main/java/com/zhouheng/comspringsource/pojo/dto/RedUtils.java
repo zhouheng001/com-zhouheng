@@ -5,6 +5,7 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.EmbeddedValueResolverAware;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringValueResolver;
 
 /**
@@ -13,9 +14,10 @@ import org.springframework.util.StringValueResolver;
  *   xxxxAware的功能 - - -> xxxxProcessor
  * @create 2019-01-24 16:14
  */
-public class Red implements ApplicationContextAware, BeanNameAware, EmbeddedValueResolverAware {
+@Component
+public class RedUtils implements ApplicationContextAware, BeanNameAware, EmbeddedValueResolverAware {
 
-    private ApplicationContext applicationContext;
+    private static ApplicationContext applicationContext;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -32,5 +34,9 @@ public class Red implements ApplicationContextAware, BeanNameAware, EmbeddedValu
     public void setEmbeddedValueResolver(StringValueResolver resolver) {
         String s = resolver.resolveStringValue("你好${os.name}，我是#{20*16}");
         System.out.println("解析的字符串:"+s);
+    }
+
+    public static RedUtils get(){
+       return applicationContext.getBean(RedUtils.class);
     }
 }

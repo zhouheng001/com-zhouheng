@@ -2,6 +2,7 @@ package com.tujia.comdubboapi.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
@@ -84,23 +85,23 @@ public class TestOperateAop {
      * 环绕通知第一个参数必须是org.aspectj.lang.ProceedingJoinPoint类型
      */
 //    @Around("execution(* com.tujia.comaopandannotation.controller.TestController.getCount(..))")
-//    @Around("executePackage()")
-//    public Object aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
-//        System.out.println("- - - - - 环绕通知 - - - -");
-//        System.out.println("环绕通知的目标方法名：" + proceedingJoinPoint.getSignature().getName());
-//        Object obj = null;
-//        try {// obj之前可以写目标方法执行前的逻辑
-//            obj = proceedingJoinPoint.proceed();// 调用执行目标方法
-//            return obj;
-//        } catch (Throwable throwable) {
-//            throwable.printStackTrace();
-//            obj = "服务器内部繁忙";
-//        } finally {
-//            System.out.println("- - - - - 环绕通知 end - - - -");
-//        }
-//
-//        System.out.println("---输出结果!---");
-//        return obj;
-//    }
+    @Around("executePackage()")
+    public Object aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
+        System.out.println("- - - - - 环绕通知 - - - -");
+        System.out.println("环绕通知的目标方法名：" + proceedingJoinPoint.getSignature().getName());
+        Object obj = null;
+        try {// obj之前可以写目标方法执行前的逻辑
+            obj = proceedingJoinPoint.proceed();// 调用执行目标方法
+            return obj;
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+            obj = "服务器内部繁忙";
+        } finally {
+            System.out.println("- - - - - 环绕通知 end - - - -");
+        }
+
+        System.out.println("---输出结果!---");
+        return obj;
+    }
 
 }

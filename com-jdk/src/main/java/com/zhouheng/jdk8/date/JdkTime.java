@@ -26,6 +26,7 @@ public class JdkTime {
         LocalDateTime nowe1 = LocalDateTime.now();
         System.out.println(nowe1.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 
+
         System.out.println(Instant.now());
 
     }

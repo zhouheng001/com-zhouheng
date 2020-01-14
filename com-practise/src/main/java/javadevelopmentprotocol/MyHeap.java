@@ -1,5 +1,6 @@
 package javadevelopmentprotocol;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,11 +12,11 @@ import java.util.Date;
  * @create 2019-01-23 17:56
  */
 public class MyHeap {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ParseException {
 
 
         Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM:dd HH:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String format = simpleDateFormat.format(date);
 
 
@@ -25,5 +26,10 @@ public class MyHeap {
         System.out.println(String.format("时间:%s测试生成堆栈文件!", format));
 
 
+        Date date4 = simpleDateFormat.parse("123");
+        System.out.println(date4.getTime());
+
+        long l = -1;
+        System.out.println(l);
     }
 }

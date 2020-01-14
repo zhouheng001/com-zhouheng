@@ -53,7 +53,7 @@ public class SwaggerConfiguration {
 //                .enableUrlTemplating(true)
                 .useDefaultResponseMessages(true)
                 .forCodeGeneration(false)
-//                .host(host())
+//                .host("")
                 .apiInfo(apiInfo("test_api","文档中可以查询及测试接口调用参数和结果","4.4"));
 //                .securitySchemes(Lists.newArrayList(apiKey()))
 //                .securityContexts(Lists.newArrayList(securityContext()));
@@ -73,7 +73,7 @@ public class SwaggerConfiguration {
 //                .enableUrlTemplating(true)
                 .useDefaultResponseMessages(true)
                 .forCodeGeneration(false)
-//                .host(host())
+                .host("127.0.0.3")
                 .apiInfo(apiInfo("h5_api","文档中可以查询及测试接口调用参数和结果","4.4"));
 //                .securitySchemes(Lists.newArrayList(apiKey()))
 //                .securityContexts(Lists.newArrayList(securityContext()));

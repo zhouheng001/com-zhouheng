@@ -3,6 +3,7 @@ package com.tujia.response;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -13,6 +14,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @ApiModel
+@Builder
 public class ResponseResult<T> {
     @ApiModelProperty("状态码")
     private int statusCode;

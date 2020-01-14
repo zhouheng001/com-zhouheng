@@ -7,7 +7,7 @@ import com.zhouheng.comspringsource.condition.WindowCondition;
 import com.zhouheng.comspringsource.pojo.dto.Color;
 import com.zhouheng.comspringsource.pojo.dto.ColorFactoryBean;
 import com.zhouheng.comspringsource.pojo.dto.Person;
-import com.zhouheng.comspringsource.pojo.dto.Red;
+import com.zhouheng.comspringsource.pojo.dto.RedUtils;
 import com.zhouheng.comspringsource.service.UserService;
 import org.springframework.context.annotation.*;
 import org.springframework.stereotype.Controller;
@@ -20,16 +20,16 @@ import org.springframework.stereotype.Controller;
  */
 
 @Configuration
-//@ComponentScan(basePackages = {"com.zhouheng.comspringsource"})
-@ComponentScans(value = {@ComponentScan(basePackages = {"com.zhouheng.comspringsource"},
-        excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class}),
-                @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {UserService.class}),
-                @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {MyFilter.class})
-        }, useDefaultFilters = false)
+@ComponentScan(basePackages = {"com.zhouheng.comspringsource"})
+//@ComponentScans(value = {@ComponentScan(basePackages = {"com.zhouheng.comspringsource"},
+//        excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, classes = {Controller.class}),
+//                @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = {UserService.class}),
+//                @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {MyFilter.class})
+//        }, useDefaultFilters = false)
 
-}
-)
-@Import({Color.class, Red.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
+//}
+//)
+@Import({Color.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 public class SpringConfig {
 
     @Scope("prototype")

@@ -1,16 +1,8 @@
 package com.zhouheng.comspringsource.config;
 
-import com.zhouheng.comspringsource.condition.LinuxCondition;
-import com.zhouheng.comspringsource.condition.MyImportBeanDefinitionRegistrar;
-import com.zhouheng.comspringsource.condition.MyImportSelector;
-import com.zhouheng.comspringsource.condition.WindowCondition;
 import com.zhouheng.comspringsource.pojo.dto.Color;
-import com.zhouheng.comspringsource.pojo.dto.ColorFactoryBean;
 import com.zhouheng.comspringsource.pojo.dto.Person;
-import com.zhouheng.comspringsource.pojo.dto.Red;
-import com.zhouheng.comspringsource.service.UserService;
 import org.springframework.context.annotation.*;
-import org.springframework.stereotype.Controller;
 
 /**
  * @author zhouheng

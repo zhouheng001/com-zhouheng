@@ -14,6 +14,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 /**
  * 描述:
  *
@@ -26,7 +28,7 @@ import org.springframework.web.bind.annotation.*;
 public class H5Controller {
 
     @ApiOperation(value = "pc端获取数量", httpMethod = "GET", notes = "获取数量")
-    @RequestMapping("/")
+    @RequestMapping("/t1")
     @TestAnnotation(testEnum = TestEnum.PC, name = "获取数量")
     public int getCount() {
         return 10;
@@ -63,7 +65,7 @@ public class H5Controller {
     @RequestMapping(value = "/queryUser", method = RequestMethod.GET)
     public ResponseResult queryUser(@RequestParam("userId") String userId) {
         System.out.println("queryUser:::" + userId);
-        User user = new User(userId, "张三", "******", "mao2080@sina.com");
+        User user = new User(userId, "张三", "******", "mao2080@sina.com",new Date());
         return new ResponseResult(HttpStatus.OK.value(), user);
     }
 }

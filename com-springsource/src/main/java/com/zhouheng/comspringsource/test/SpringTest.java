@@ -2,6 +2,7 @@ package com.zhouheng.comspringsource.test;
 
 import com.zhouheng.comspringsource.config.SpringConfig;
 import com.zhouheng.comspringsource.pojo.dto.Person;
+import com.zhouheng.comspringsource.pojo.dto.RedUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -20,12 +21,14 @@ public class SpringTest {
 
 
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfig.class);
-        Person bean = (Person) applicationContext.getBean("zhouheng");
-        System.out.println(bean);
-        String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
-        for (String s : beanNamesForType) {
-            System.out.println(s);
-        }
+        RedUtils redUtils = RedUtils.get();
+        System.out.println(redUtils);
+//        Person bean = (Person) applicationContext.getBean("zhouheng");
+//        System.out.println(bean);
+//        String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
+//        for (String s : beanNamesForType) {
+//            System.out.println(s);
+//        }
 //        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
 //        for (String beanDefinitionName : beanDefinitionNames) {
 //            System.out.println(beanDefinitionName);
