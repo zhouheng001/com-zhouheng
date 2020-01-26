@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @Description：
  * @Date： created in 15:56 2019/5/13
  */
-@SpringBootApplication(scanBasePackages = {"com.example.comwebsocket.config"})
+@SpringBootApplication
 @EnableScheduling //该注解是开启定时任务的支持
 public class WebsocketApplication extends SpringBootServletInitializer {
 
