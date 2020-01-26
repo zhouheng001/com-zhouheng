@@ -37,6 +37,6 @@ public class ProductExpireTask {
         int random_index = (int) (Math.random()*strs.length);
         return strs[random_index];
     }
- 
- 
+
+
 }
