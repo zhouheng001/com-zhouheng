@@ -33,6 +33,10 @@
             <version>1.2.25</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.rnkrsoft.bopomofo4j</groupId>
             <artifactId>bopomofo4j</artifactId>
         </dependency>

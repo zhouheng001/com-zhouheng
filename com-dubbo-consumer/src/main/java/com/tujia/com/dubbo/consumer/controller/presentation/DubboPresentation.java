@@ -25,10 +25,10 @@ public class DubboPresentation {
     @Reference(version = "1.0.0", group = "CityDubboService3")
     private CityDubboService cityDubboService2;
 
-    @Reference(group = "CityDubboService4")
+    @Reference(version = "1.0.0", group = "CityDubboService4")
     private CityDubboService cityDubboService3;
 
-    @Reference(version = "1.0.0",group = "TUser0000Service")
+    @Reference(version = "1.0.0", group = "TUser0000Service")
     private TUser0000Service tUser0000Service;
 
     public City getCity() {
