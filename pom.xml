@@ -37,6 +37,7 @@
         <module>com-rabbitmq</module>
         <module>com-kafka</module>
         <module>com-shardingsphere</module>
+        <module>com-websocket</module>
     </modules>
 
     <properties>
@@ -69,6 +70,7 @@
         <sharding.version>4.0.0-RC2</sharding.version>
         <jasypt.version>1.16</jasypt.version>
         <disruptor.version>3.3.5</disruptor.version>
+        <dubbo.version>2.7.4.1</dubbo.version>
     </properties>
 
     <dependencyManagement>
@@ -198,6 +200,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
