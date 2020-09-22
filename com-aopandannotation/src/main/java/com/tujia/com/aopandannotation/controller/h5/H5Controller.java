@@ -12,8 +12,10 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Date;
 
 /**
@@ -36,7 +38,7 @@ public class H5Controller {
 
     @ApiOperation(value = "新增用户", httpMethod = "POST", notes = "新增注册")
     @RequestMapping(value = "/createUser", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseResult createUser(@RequestBody RequestParamterBase<User> user) {
+    public ResponseResult createUser(@RequestBody @Validated User user) {
         System.out.println("createUser:::" + user.toString());
         return new ResponseResult(HttpStatus.OK.value(), "新增成功.");
     }
@@ -65,7 +67,7 @@ public class H5Controller {
     @RequestMapping(value = "/queryUser", method = RequestMethod.GET)
     public ResponseResult queryUser(@RequestParam("userId") String userId) {
         System.out.println("queryUser:::" + userId);
-        User user = new User(userId, "张三", "******", "mao2080@sina.com",new Date());
+        User user = new User(userId, "张三", "******", "mao2080@sina.com",new Date(),123,"");
         return new ResponseResult(HttpStatus.OK.value(), user);
     }
 }
