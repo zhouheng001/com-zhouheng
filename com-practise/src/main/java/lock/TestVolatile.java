@@ -1,6 +1,7 @@
 package lock;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.LongAdder;
 
 /**
  * 描述:
@@ -10,8 +11,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class TestVolatile implements Runnable{
 
-//    private volatile Integer count = 10;
+  //  private volatile Integer count = 10;
     private AtomicInteger count = new AtomicInteger();
+    private LongAdder longAdder = new LongAdder();
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -22,10 +24,12 @@ public class TestVolatile implements Runnable{
         }
         Thread.sleep(3000);
         System.out.println(testVolatile.count);
+
     }
 
     @Override
     public void run() {
         count.incrementAndGet();
+        longAdder.increment();
     }
 }

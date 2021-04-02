@@ -29,6 +29,11 @@ public class JdkTime {
 
         System.out.println(Instant.now());
 
+        Instant now1 = Instant.now();
+        System.out.println(now1);
+        System.out.println(now1.getEpochSecond());
+
+        System.out.println(nowTime.getTime());
     }
 
 }

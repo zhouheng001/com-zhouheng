@@ -1,11 +1,12 @@
 package com.zhouheng.jdk8.stream2;
 
 import com.zhouheng.jdk8.isnull.param.Car;
+import jdk.nashorn.internal.ir.annotations.Immutable;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.BinaryOperator;
+import java.util.function.IntConsumer;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -25,11 +26,20 @@ public class Group {
         Car m4 = new Car(14, "M");
         Car m5 = new Car(14, "W");
 
-        List list = Arrays.asList(m,m1,m2,m3,m4,m5);
+        List<Car> list = Arrays.asList(m,m1,m2,m3,m4,m5);
         System.out.println(list);
+//
+//        Map<String, ArrayList<Car>> collect = (Map<String, ArrayList<Car>>) list.stream().collect(Collectors.groupingBy(Car::getSex));
+//        System.out.println(collect);
 
-        Map<String, ArrayList<Car>> collect = (Map<String, ArrayList<Car>>) list.stream().collect(Collectors.groupingBy(Car::getSex));
-        System.out.println(collect);
+        Map<Integer, String> collect = list.stream().collect(Collectors.toMap(Car::getAge, Car::getSex, (v1, v2) -> v2));
+        Set<Map.Entry<Integer, String>> entries = collect.entrySet();
+        entries.forEach(System.out::println);
+
+        List<Object> objects = Collections.emptyList();
+
+        IntConsumer aNew = String[]::new;
+
 
     }
 }

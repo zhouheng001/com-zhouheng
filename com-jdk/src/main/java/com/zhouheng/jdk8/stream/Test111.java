@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -56,8 +57,8 @@ public class Test111 {
 //        }
 //        System.out.println(sum);
 
-//        Integer reduce = s1.stream().map(s -> Integer.parseInt(s)).reduce(0, Integer::sum);
-//        System.out.println(reduce);
+        Integer reduce = s1.stream().map(s -> Integer.parseInt(s)).reduce(0, Integer::sum);
+        System.out.println(reduce);
 //
 //        Optional<Integer> reduce1 = s1.stream().map(s -> Integer.parseInt(s)).reduce(Integer::max);
 //        reduce1.ifPresent(System.out::println);
@@ -69,13 +70,17 @@ public class Test111 {
         Stream<Employee> stream1 = Arrays.stream(employees);
 
         //通过Stream中的of方法
-       Stream<String> aa = Stream.of("aa", "bb", "cc");
-        Object[] objects = aa.toArray();
+//       Stream<String> aa = Stream.of("aa", "bb", "cc");
+//        Object[] objects = aa.toArray();
+//
+//
+//        //创建无限流
+//        Stream<Integer> iterate = Stream.iterate(0, x -> x + 2);
+//        iterate.skip(20).limit(10).forEach(System.out::println);
 
 
-        //创建无限流
-        Stream<Integer> iterate = Stream.iterate(0, x -> x + 2);
-        iterate.skip(20).limit(10).forEach(System.out::println);
+        ThreadLocalRandom threadLocalRandom = ThreadLocalRandom.current();
+        System.out.println(threadLocalRandom.nextInt(20));
     }
 
 }

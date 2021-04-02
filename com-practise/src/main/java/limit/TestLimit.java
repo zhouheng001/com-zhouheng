@@ -13,7 +13,7 @@ public class TestLimit {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    CountRateLimiterDemo.exec();
+                    CountRateLimiterDemo1.exec();
                 }
             }).start();
         }

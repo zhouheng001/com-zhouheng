@@ -38,6 +38,7 @@
         <module>com-kafka</module>
         <module>com-shardingsphere</module>
         <module>com-websocket</module>
+        <module>com-netty</module>
     </modules>
 
     <properties>
@@ -71,6 +72,7 @@
         <jasypt.version>1.16</jasypt.version>
         <disruptor.version>3.3.5</disruptor.version>
         <dubbo.version>2.7.4.1</dubbo.version>
+        <hutool.version>5.5.7</hutool.version>
     </properties>
 
     <dependencyManagement>
@@ -85,6 +87,11 @@
                 <groupId>com.github.ulisesbocchio</groupId>
                 <artifactId>jasypt-spring-boot-starter</artifactId>
                 <version>${jasypt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
             </dependency>
             <dependency>
                 <groupId>redis.clients</groupId>
