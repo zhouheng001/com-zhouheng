@@ -52,5 +52,6 @@ public class HutoolTest {
         }
 
         System.out.println(list);
+
     }
 }
